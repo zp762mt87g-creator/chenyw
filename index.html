@@ -5,6 +5,15 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>陈源威 · 个人简历 | 金融经济 · 产业研究</title>
 <meta name="description" content="陈源威 — 金融经济学硕士，产业规划与战略研究方向。曾任职华夏幸福战略管理部，现于深圳大学/深圳市工信局从事产业规划与政策研究。" />
+<!-- Open Graph / 社交分享卡片 -->
+<meta property="og:type" content="website" />
+<meta property="og:title" content="陈源威 · 个人简历" />
+<meta property="og:description" content="金融经济学硕士 · 战略 · 产研 · 政策 · 产品 | 产业规划、政策研究与战略管理" />
+<meta property="og:image" content="https://zp762mt87g-creator.github.io/chenyw/og-cover.png" />
+<meta property="og:url" content="https://zp762mt87g-creator.github.io/chenyw/" />
+<meta name="twitter:card" content="summary_large_image" />
+<!-- Favicon（内嵌 SVG，零外部依赖） -->
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='6' fill='%2306121f'/><text x='16' y='23' text-anchor='middle' font-family='system-ui,sans-serif' font-weight='800' font-size='20' fill='%2322d3ee'>陈</text></svg>" />
 <script>document.documentElement.classList.add('js')</script>
 <style>
   :root{
@@ -60,13 +69,12 @@
     box-shadow:0 8px 30px rgba(0,0,0,.4);
   }
   nav .brand{font-family:'PingFang SC','Microsoft YaHei',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;font-weight:700;font-size:.85rem;letter-spacing:1px;padding:0 12px;background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
-  nav a{padding:7px 14px;border-radius:999px;font-size:.82rem;color:var(--muted);transition:.25s}
-  nav a:hover{color:var(--text);background:rgba(255,255,255,.06)}
-  .nav-toggle{display:none}
+  nav a{padding:7px 14px;border-radius:999px;font-size:.82rem;color:var(--muted);transition:.25s}nav a:hover,nav a:active{color:var(--text);background:rgba(255,255,255,.06)}
+  .nav-toggle{display:none;background:none;border:0;color:var(--muted);font-size:1.2rem;line-height:1;cursor:pointer;padding:7px 12px;border-radius:999px;transition:.25s}.nav-toggle:hover,.nav-toggle:active{color:var(--text);background:rgba(255,255,255,.06)}
 
   /* ====== 布局 ====== */
   .wrap{max-width:1080px;margin:0 auto;padding:0 24px}
-  section{padding:96px 0;position:relative}
+  section.wrap{padding:48px 24px;position:relative}
   .eyebrow{font-family:'PingFang SC','Microsoft YaHei',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;font-size:.72rem;letter-spacing:3px;color:var(--cyan);text-transform:uppercase;margin-bottom:10px;display:flex;align-items:center;gap:10px}
   .eyebrow::before{content:"";width:26px;height:1px;background:var(--grad)}
   h2.title{font-size:clamp(1.6rem,4vw,2.4rem);font-weight:700;margin-bottom:36px;letter-spacing:.5px}
@@ -84,10 +92,8 @@
   .hero .desc{max-width:620px;color:var(--muted);margin-top:20px;font-size:1rem}
   .hero .cta{display:flex;flex-wrap:wrap;gap:14px;margin-top:38px}
   .btn{display:inline-flex;align-items:center;gap:10px;padding:13px 26px;border-radius:12px;font-size:.92rem;font-weight:500;transition:.3s;cursor:pointer;border:1px solid transparent;font-family:inherit}
-  .btn.primary{background:var(--grad);color:#06121f;font-weight:700;box-shadow:0 10px 30px rgba(34,211,238,.25)}
-  .btn.primary:hover{transform:translateY(-3px);box-shadow:0 16px 40px rgba(34,211,238,.4)}
-  .btn.ghost{border-color:var(--panel-border);color:var(--text);background:var(--panel)}
-  .btn.ghost:hover{border-color:var(--cyan);color:var(--cyan)}
+  .btn.primary{background:var(--grad);color:#06121f;font-weight:700;box-shadow:0 10px 30px rgba(34,211,238,.25)}.btn.primary:hover,.btn.primary:active{transform:translateY(-3px);box-shadow:0 16px 40px rgba(34,211,238,.4)}
+  .btn.ghost{border-color:rgba(34,211,238,.45);color:var(--cyan);background:rgba(34,211,238,.06);backdrop-filter:blur(6px)}.btn.ghost:hover,.btn.ghost:active{border-color:var(--cyan);color:#eafdff;background:rgba(34,211,238,.16);box-shadow:0 10px 26px rgba(34,211,238,.22);transform:translateY(-3px)}
   .scroll-hint{position:absolute;bottom:30px;left:50%;transform:translateX(-50%);color:var(--muted);font-size:.72rem;letter-spacing:2px;display:flex;flex-direction:column;align-items:center;gap:8px}
   .scroll-hint .mouse{width:22px;height:36px;border:1.5px solid var(--muted);border-radius:12px;position:relative}
   .scroll-hint .mouse::after{content:"";position:absolute;top:7px;left:50%;transform:translateX(-50%);width:3px;height:7px;border-radius:2px;background:var(--cyan);animation:scroll 1.8s infinite}
@@ -95,26 +101,31 @@
 
   /* ====== 卡片 / 玻璃 ====== */
   .panel{background:var(--panel);border:1px solid var(--panel-border);border-radius:var(--radius);padding:26px 28px;backdrop-filter:blur(8px);transition:.35s;position:relative;overflow:hidden}
-  .panel::before{content:"";position:absolute;inset:0;border-radius:var(--radius);padding:1px;background:var(--grad);-webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);-webkit-mask-composite:xor;mask-composite:exclude;opacity:0;transition:.35s}
-  .panel:hover{transform:translateY(-4px);box-shadow:0 18px 50px rgba(0,0,0,.45)}
-  .panel:hover::before{opacity:.9}
+  .panel::before{content:"";position:absolute;inset:0;border-radius:var(--radius);padding:1px;background:var(--grad);-webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);-webkit-mask-composite:xor;mask-composite:exclude;opacity:0;transition:.35s}.panel:hover,.panel:active{transform:translateY(-4px);box-shadow:0 18px 50px rgba(0,0,0,.45)}.panel:hover::before,.panel:active::before{opacity:.9}
 
   /* ====== 关于（含雷达图）====== */
   .about-grid{display:grid;grid-template-columns:1.4fr 1fr;gap:24px}
-  .about-grid p{color:var(--muted);margin-bottom:14px}
+  .about-grid p{color:var(--muted);margin-bottom:18px;line-height:1.85}
   .radar-wrap{display:flex;flex-direction:column;align-items:center;justify-content:center}
   .radar{width:100%;max-width:320px}
   .radar .grid{fill:none;stroke:rgba(255,255,255,.08)}
-  .radar .axis{stroke:rgba(255,255,255,.12)}
-  .radar .area{fill:rgba(34,211,238,.18);stroke:var(--cyan);stroke-width:2;filter:drop-shadow(0 0 6px rgba(34,211,238,.4))}
-  .radar .dot{fill:var(--cyan)}
+  .radar .axis{stroke:rgba(255,255,255,.14)}
+  .radar .area{fill:url(#radarFill);stroke:var(--cyan);stroke-width:2;stroke-linejoin:round;filter:drop-shadow(0 0 8px rgba(34,211,238,.5));transition:opacity .8s ease,transform 1s cubic-bezier(.2,.7,.3,1)}
+  .radar .dot{fill:var(--cyan);cursor:pointer;transition:opacity .4s ease,r .2s ease,filter .2s ease}
+  .radar .dot:hover,.radar .dot:active{r:5.5;fill:#fff;filter:drop-shadow(0 0 7px rgba(34,211,238,.95))}
   .radar text{fill:var(--muted);font-size:11px;font-family:'PingFang SC','Microsoft YaHei',sans-serif}
+  .radar text .sc{fill:var(--cyan);font-weight:700}
+  /* 仅 JS 环境下先隐藏，滚动到位(.show)再绘入，保证无 JS 时正常显示 */
+  .js .radar .area{opacity:0;transform:scale(.55);transform-box:fill-box;transform-origin:center}
+  .js .radar .dot{opacity:0;transition:opacity .4s ease .55s,r .2s ease,filter .2s ease}
+  .panel.show .radar .area{opacity:1;transform:scale(1)}
+  .panel.show .radar .dot{opacity:1}
   .radar-cap{font-size:.78rem;color:var(--muted);margin-top:8px;text-align:center}
-  .mini-row{display:flex;gap:12px;margin-top:16px}
-  .mini{flex:1;min-width:120px;background:rgba(255,255,255,.03);border:1px solid var(--panel-border);border-radius:12px;padding:14px 16px}
+  .mini-row{display:grid;grid-template-columns:repeat(5,1fr);gap:12px;margin-top:24px}
+  .mini{flex:1;min-width:120px;background:rgba(255,255,255,.03);border:1px solid var(--panel-border);border-radius:12px;padding:14px 16px;transition:.3s}
   .mini .mv{font-size:1.5rem;font-weight:800;background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent;line-height:1.1}
   .mini .ml{font-size:.72rem;color:var(--muted);margin-top:5px}
-  .mini .sl{font-size:.9rem;color:var(--muted);font-weight:600}
+  .mini .sl{font-size:.9rem;color:var(--muted);font-weight:600}.mini:hover,.mini:active{border-color:var(--cyan);transform:translateY(-3px);box-shadow:0 10px 26px rgba(34,211,238,.18)}
 
   /* ====== 领导/汇报线 ====== */
   .lead-line{font-size:.86rem;color:var(--cyan);margin:4px 0 14px;padding:8px 12px;border-left:2px solid var(--cyan);background:rgba(34,211,238,.06);border-radius:0 8px 8px 0}
@@ -130,9 +141,11 @@
   .bar-fill.show{width:var(--w)}
 
   /* 企业 logo 行 */
-  .logo-row{display:flex;flex-wrap:wrap;gap:10px;margin-top:14px}
-  .logo{display:flex;align-items:center;gap:9px;padding:5px 14px 5px 5px;border-radius:999px;background:rgba(255,255,255,.04);border:1px solid var(--panel-border);transition:.25s}
-  .logo:hover{border-color:var(--cyan);transform:translateY(-2px)}
+  .logo-row{display:flex;flex-wrap:wrap;align-items:center;gap:10px}
+  .proj-footer{display:flex;flex-wrap:wrap;align-items:center;gap:16px;margin-top:14px}
+  .proj-footer .mini{flex:0 0 auto;min-width:150px}
+  .logo-etc{font-size:1.1rem;color:var(--muted);font-weight:700;letter-spacing:2px;padding:0 4px}
+  .logo{display:flex;align-items:center;gap:9px;padding:5px 14px 5px 5px;border-radius:999px;background:rgba(255,255,255,.04);border:1px solid var(--panel-border);transition:.25s}.logo:hover,.logo:active{border-color:var(--cyan);transform:translateY(-2px)}
   .logo .mono{width:28px;height:28px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:.82rem;font-weight:800;background:var(--grad);color:#06121f;flex-shrink:0}
   .logo .nm{font-size:.84rem;color:var(--text)}
 
@@ -145,8 +158,7 @@
 
   /* 荣誉徽章 */
   .honor-row{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:18px}
-  .honor{display:flex;align-items:center;gap:10px;padding:14px 18px;border-radius:12px;font-size:.94rem;font-weight:500;background:linear-gradient(135deg,rgba(34,211,238,.07),rgba(168,85,247,.06));border:1px solid var(--panel-border);border-left:3px solid var(--cyan);transition:.25s}
-  .honor:hover{border-color:var(--cyan);transform:translateY(-2px);box-shadow:0 8px 20px rgba(34,211,238,.16)}
+  .honor{display:flex;align-items:center;gap:10px;padding:14px 18px;border-radius:12px;font-size:.94rem;font-weight:500;background:linear-gradient(135deg,rgba(34,211,238,.07),rgba(168,85,247,.06));border:1px solid var(--panel-border);border-left:3px solid var(--cyan);transition:.25s}.honor:hover,.honor:active{border-color:var(--cyan);transform:translateY(-2px);box-shadow:0 8px 20px rgba(34,211,238,.16)}
   .honor .star{color:#fbbf24;font-size:1.05rem;text-shadow:0 0 8px rgba(251,191,36,.5)}
 
   /* 2x2 / 左右排布卡片 */
@@ -158,9 +170,9 @@
 
   /* 完成率圆环 */
   .rings{display:flex;flex-wrap:wrap;align-items:center;gap:26px;margin-top:18px}
-  .ring-fig{position:relative;text-align:center}
-  .ring-fig .donut{display:block;margin:0 auto;width:150px;height:150px}
-  .ring-fig:not(.big) .donut{width:98px;height:98px}
+  .ring-fig{position:relative;text-align:center;transition:transform .25s}
+  .ring-fig .donut{display:block;margin:0 auto;width:150px;height:150px;transition:transform .25s,filter .25s}
+  .ring-fig:not(.big) .donut{width:98px;height:98px}.ring-fig:hover,.ring-fig:active{transform:translateY(-4px)}.ring-fig:hover .donut,.ring-fig:active .donut{transform:scale(1.05);filter:drop-shadow(0 8px 20px rgba(34,211,238,.45))}.ring-fig:hover .ring-cap,.ring-fig:active .ring-cap{color:var(--text)}
   .donut .track{fill:none;stroke:rgba(255,255,255,.10);stroke-width:11}
   .donut .prog{fill:none;stroke-width:11;stroke-linecap:butt;stroke-dasharray:320;stroke-dashoffset:320;transform:rotate(-90deg);transform-origin:60px 60px;transition:stroke-dashoffset 1.6s cubic-bezier(.2,.7,.2,1)}
   .donut.show .prog{stroke-dashoffset:var(--o)}
@@ -171,10 +183,10 @@
   .ring-side{display:flex;gap:18px}
 
   /* TOP1 徽章 */
-  .top1{display:flex;align-items:center;gap:14px;margin-top:16px;padding:12px 18px;border-radius:12px;background:linear-gradient(135deg,rgba(251,191,36,.14),rgba(168,85,247,.10));border:1px solid rgba(251,191,36,.35);position:relative;overflow:hidden}
+  .top1{display:flex;align-items:center;gap:14px;margin-top:16px;padding:12px 18px;border-radius:12px;background:linear-gradient(135deg,rgba(251,191,36,.14),rgba(168,85,247,.10));border:1px solid rgba(251,191,36,.35);position:relative;overflow:hidden;transition:transform .25s,box-shadow .25s,border-color .25s}
   .top1 .trophy{font-size:1.8rem;filter:drop-shadow(0 0 8px rgba(251,191,36,.6))}
   .top1 .trank{font-size:1.15rem;font-weight:800;color:#fbbf24}
-  .top1 .tcap{font-size:.8rem;color:var(--muted)}
+  .top1 .tcap{font-size:.8rem;color:var(--muted)}.top1:hover,.top1:active{transform:translateY(-3px);border-color:#fbbf24;box-shadow:0 12px 30px rgba(251,191,36,.30)}
 
   /* 企业 logo 品牌色 */
   .logo.brand-mcd{border-left:3px solid #da291c}
@@ -201,7 +213,8 @@
   /* ====== 时间线 ====== */
   .timeline{position:relative;padding-left:30px}
   .timeline::before{content:"";position:absolute;left:7px;top:6px;bottom:6px;width:2px;background:linear-gradient(var(--cyan),var(--violet));opacity:.5}
-  .item{position:relative;margin-bottom:30px}
+  .item{position:relative;margin-bottom:30px;transition:.3s}
+  .timeline .item:last-child{margin-bottom:0}
   .item::before{content:"";position:absolute;left:-30px;top:8px;width:14px;height:14px;border-radius:50%;background:var(--bg);border:2px solid var(--cyan);box-shadow:var(--glow)}
   .item .head{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:baseline;gap:8px}
   .item .org{font-size:1.12rem;font-weight:700}
@@ -211,7 +224,7 @@
   .item ul{list-style:none;display:grid;gap:9px}
   .item li{position:relative;padding-left:20px;color:#cfd7e6;font-size:.94rem}
   .item li::before{content:"▸";position:absolute;left:0;color:var(--cyan)}
-  .item li b{color:#fff;font-weight:600}
+  .item li b{color:#fff;font-weight:600}.item:hover,.item:active{transform:translateY(-2px)}.item:hover::before,.item:active::before{box-shadow:0 0 14px var(--cyan)}
 
   /* ====== 教育 ====== */
   .edu-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px}
@@ -229,14 +242,20 @@
   .pub .name .role{color:var(--cyan);font-size:.8rem;font-weight:400;margin-left:8px}
   .pub .journal{color:var(--muted);font-size:.86rem;margin-top:2px}
   .pub .journal .star{color:#fbbf24}
+  .pub.panel{cursor:pointer;text-decoration:none;color:inherit;transition:.25s}.pub.panel:hover,.pub.panel:active{border-color:var(--cyan);transform:translateY(-2px);box-shadow:0 6px 22px rgba(56,189,248,.12)}
+  .pub .dl-hint{margin-top:9px;font-size:.8rem;color:var(--cyan);display:flex;align-items:center;gap:5px;opacity:.7;transition:.25s}.pub.panel:hover .dl-hint,.pub.panel:active .dl-hint{opacity:1}
+  /* 微信内置浏览器下载提示条 */
+  .wx-tip{display:none;position:fixed;top:0;left:0;right:0;z-index:10000;background:#1b2233;border-bottom:1px solid var(--cyan);color:#dff3ff;font-size:.8rem;line-height:1.5;padding:9px 40px 9px 14px;text-align:center}
+  .wx-tip b{color:var(--cyan);font-weight:600}
+  .wx-tip .x{position:absolute;right:12px;top:50%;transform:translateY(-50%);cursor:pointer;opacity:.7;font-size:1.15rem;padding:0 4px}
+  html.wx nav{top:64px}
 
   /* ====== 技能 ====== */
   .skills{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:20px}
   .skill-card h3{font-size:1rem;margin-bottom:14px;display:flex;align-items:center;gap:8px}
   .skill-card h3 .ic{color:var(--cyan)}
   .chips{display:flex;flex-wrap:wrap;gap:9px}
-  .chip{padding:7px 14px;border-radius:9px;font-size:.84rem;background:rgba(255,255,255,.04);border:1px solid var(--panel-border);transition:.25s}
-  .chip:hover{border-color:var(--cyan);color:var(--cyan);transform:translateY(-2px)}
+  .chip{padding:7px 14px;border-radius:9px;font-size:.84rem;background:rgba(255,255,255,.04);border:1px solid var(--panel-border);transition:.25s}.chip:hover,.chip:active{border-color:var(--cyan);color:var(--cyan);transform:translateY(-2px)}
 
   /* ====== 联系 / 页脚 ====== */
   .contact{text-align:center;padding-bottom:128px}
@@ -253,8 +272,7 @@
   .portfolio .pf-cap{font-size:.76rem;color:var(--muted);margin-top:3px}
   .portfolio .btn{padding:11px 20px;font-size:.86rem;white-space:nowrap}
   .portfolio .pf-tag{display:inline-block;margin-left:8px;padding:2px 8px;border-radius:999px;font-size:.66rem;color:var(--cyan);border:1px solid var(--panel-border);background:rgba(34,211,238,.08);vertical-align:middle}
-  .contact .links a{padding:12px 22px;border-radius:12px;border:1px solid var(--panel-border);background:var(--panel);transition:.3s;font-size:.9rem}
-  .contact .links a:hover{border-color:var(--cyan);color:var(--cyan);transform:translateY(-3px)}
+  .contact .links a{padding:12px 22px;border-radius:12px;border:1px solid var(--panel-border);background:var(--panel);transition:.3s;font-size:.9rem}.contact .links a:hover,.contact .links a:active{border-color:var(--cyan);color:var(--cyan);transform:translateY(-3px)}
   footer{padding:52px 0;text-align:center;color:var(--muted);font-size:.78rem;border-top:1px solid var(--panel-border);margin-top:64px}
 
   /* ====== 复制提示 toast ====== */
@@ -272,21 +290,30 @@
     .about-grid,.edu-grid{grid-template-columns:1fr}
     .inline-metrics.two-col{grid-template-columns:1fr}
     .honor-row{grid-template-columns:1fr}
-    nav a:not(.brand){display:none}
-    nav .nav-toggle{display:inline-block;color:var(--muted);padding:7px 12px;font-size:.82rem}
-    section{padding:72px 0}
+  .mini-row{grid-template-columns:repeat(auto-fit,minmax(140px,1fr))}
+  nav{flex-wrap:wrap;justify-content:center;row-gap:6px;padding:8px 12px}
+  nav .brand{order:1}
+  nav .nav-toggle{display:inline-block;order:2;margin-left:auto;color:var(--muted);font-size:1.2rem}
+  nav a:not(.brand){display:none;order:3;width:100%;text-align:center;padding:10px}
+  nav.open a:not(.brand){display:block}
+    section.wrap{padding:28px 24px}
+    /* 移动端 Hero 按钮三合一行 */
+    .hero .cta{gap:8px;margin-top:28px}
+    .hero .cta .btn{padding:10px 14px;font-size:.82rem;border-radius:10px}
+    .hero .cta .btn:last-child{padding:10px 12px;font-size:.78rem;flex:0 0:auto}
   }
   @media print{
-    .bg-grid,.bg-glow,nav,.scroll-hint,.cta,.contact .links,.portfolio{display:none!important}
+    .bg-grid,.bg-glow,nav,.scroll-hint,.cta,.contact .links,.portfolio,.pub .dl-hint{display:none!important}
     body{background:#fff;color:#111}
     .panel,.mini{background:#fff;border:1px solid #ddd;box-shadow:none}
     .reveal{opacity:1;transform:none}
-    section{padding:24px 0;page-break-inside:avoid}
+    section.wrap{padding:12px 0;page-break-inside:avoid}
     .hero{min-height:auto;padding-top:20px}
     .hero h1,.hero .role b,h2.title .accent,.pub .idx,.item .org .co,.contact .big,.mini .mv,.lead-line{color:#111!important;-webkit-text-fill-color:#111!important;background:none!important}
     .eyebrow,.item .date,.item li::before{color:#333!important}
     .radar .area{fill:rgba(0,0,0,.05);stroke:#333}
     .radar text{fill:#333}
+    .radar .sc{fill:#333!important}
     .lead-line{background:#f5f5f5}
     .logo,.honor,.breakthrough{background:#fff!important;border:1px solid #ddd!important}
     .logo .nm,.honor,.breakthrough .label{color:#111!important}
@@ -306,8 +333,10 @@
 <div class="bg-grid"></div>
 <div class="bg-glow"><div class="blob c1"></div><div class="blob c2"></div><div class="blob c3"></div></div>
 
+<div class="wx-tip" id="wxTip">微信内暂不支持直接下载文件，请点右上角 <b>⋯</b> 选择「在浏览器打开」后下载论文<span class="x" onclick="document.getElementById('wxTip').style.display='none'">×</span></div>
 <nav>
   <span class="brand">CHEN·YW</span>
+  <button class="nav-toggle" type="button" aria-label="展开菜单">☰</button>
   <a href="#about">关于</a>
   <a href="#edu">教育</a>
   <a href="#exp">经历</a>
@@ -319,9 +348,9 @@
 
 <!-- HERO -->
 <header class="hero wrap">
-  <span class="tag"><span class="dot"></span>开放求职中 · 产业研究 / 战略 / 政策</span>
+  <span class="tag"><span class="dot"></span>开放求职中</span>
   <h1>陈<span class="fill">源威</span></h1>
-  <div class="role">金融经济学硕士 · <b>产业规划 &amp; 战略研究</b></div>
+  <div class="role">金融经济学硕士 · <b>战略 · 产研 · 政策 · 产品</b></div>
   <p class="desc">深耕产业规划、政策研究与战略管理，曾参与市级"十五五"专项规划编制、产业集群战略设计与上市公司战略管理工作，擅长从宏观研判到落地执行的完整链路。</p>
   <div class="cta">
     <a class="btn ghost" href="#exp">查看履历</a>
@@ -340,10 +369,17 @@
       <p>金融经济学科班出身，具备"学术 + 政府 + 企业"三重视角。硕士毕业于格拉斯哥大学亚当·斯密商学院，本科就读于深圳大学经济学院（辅修工商管理）。</p>
       <p>现任深圳大学派驻深圳市工信局，从事产业规划与政策研究；此前在华夏幸福战略管理部负责新业务孵化、行业研究与重大项目协同，年度绩效位列部门最高。</p>
       <p>熟悉产业经济、资产定价与数据分析，能独立完成从课题研究、政策起草到决策报告的全流程工作。</p>
+      <p>兼具研究深度与产品化表达，擅长把复杂议题拆解为清晰框架与可执行方案，适配战略研究、产业分析到互联网产品等复合岗位。</p>
     </div>
     <div class="panel reveal d1">
       <div class="radar-wrap">
         <svg class="radar" viewBox="-15 -8 330 316" role="img" aria-label="核心能力雷达图">
+          <defs>
+            <radialGradient id="radarFill" cx="50%" cy="50%" r="62%">
+              <stop offset="0%" stop-color="#22d3ee" stop-opacity="0.5"/>
+              <stop offset="100%" stop-color="#22d3ee" stop-opacity="0.1"/>
+            </radialGradient>
+          </defs>
           <polygon class="grid" points="150,122.5 173.8,136.25 173.8,163.75 150,177.5 126.2,163.75 126.2,136.25"/>
           <polygon class="grid" points="150,95 197.6,122.5 197.6,177.5 150,205 102.4,177.5 102.4,122.5"/>
           <polygon class="grid" points="150,67.5 221.4,108.75 221.4,191.25 150,232.5 78.6,191.25 78.6,108.75"/>
@@ -354,27 +390,30 @@
           <line class="axis" x1="150" y1="150" x2="150" y2="260"/>
           <line class="axis" x1="150" y1="150" x2="54.74" y2="205"/>
           <line class="axis" x1="150" y1="150" x2="54.74" y2="95"/>
-          <polygon class="area" points="150,51 230.97,103.25 226.21,194 150,249 73.79,194 64.27,100.5"/>
-          <circle class="dot" cx="150" cy="51" r="3"/>
-          <circle class="dot" cx="230.97" cy="103.25" r="3"/>
-          <circle class="dot" cx="226.21" cy="194" r="3"/>
-          <circle class="dot" cx="150" cy="249" r="3"/>
-          <circle class="dot" cx="73.79" cy="194" r="3"/>
-          <circle class="dot" cx="64.27" cy="100.5" r="3"/>
-          <text x="150" y="22" text-anchor="middle">产业规划</text>
-          <text x="262" y="92" text-anchor="middle">战略管理</text>
-          <text x="262" y="216" text-anchor="middle">财务估值</text>
-          <text x="150" y="278" text-anchor="middle">政策研究</text>
-          <text x="38" y="216" text-anchor="middle">数据分析</text>
-          <text x="38" y="92" text-anchor="middle">行业研究</text>
+          <polygon class="area" points="150,45.5 230.97,103.25 230.97,196.75 150,249 64.27,199.5 78.55,108.75"/>
+          <circle class="dot" cx="150" cy="45.5" r="3"><title>战略视野 · 9.5</title></circle>
+          <circle class="dot" cx="230.97" cy="103.25" r="3"><title>产品思维 · 8.5</title></circle>
+          <circle class="dot" cx="230.97" cy="196.75" r="3"><title>商分投融 · 8.5</title></circle>
+          <circle class="dot" cx="150" cy="249" r="3"><title>研究能力 · 9.0</title></circle>
+          <circle class="dot" cx="64.27" cy="199.5" r="3"><title>抗压能力 · 9.0</title></circle>
+          <circle class="dot" cx="78.55" cy="108.75" r="3"><title>社交倾向 · 7.5</title></circle>
+          <text x="150" y="22" text-anchor="middle">战略视野 <tspan class="sc">9.5</tspan></text>
+          <text x="262" y="92" text-anchor="middle">产品思维 <tspan class="sc">8.5</tspan></text>
+          <text x="262" y="216" text-anchor="middle">商分投融 <tspan class="sc">8.5</tspan></text>
+          <text x="150" y="278" text-anchor="middle">研究能力 <tspan class="sc">9.0</tspan></text>
+          <text x="38" y="216" text-anchor="middle">抗压能力 <tspan class="sc">9.0</tspan></text>
+          <text x="38" y="92" text-anchor="middle">社交倾向 <tspan class="sc">7.5</tspan></text>
         </svg>
         <div class="radar-cap">核心能力六维评估（满分 10）</div>
       </div>
-      <div class="mini-row">
-        <div class="mini"><div class="mv count" data-target="3" data-suffix="+">3+</div><div class="ml">年产业/战略经验</div></div>
-        <div class="mini"><div class="mv count" data-target="3" data-suffix="">3</div><div class="ml">篇一作学术论文</div></div>
-      </div>
     </div>
+  </div>
+  <div class="mini-row reveal">
+    <div class="mini"><div class="mv count" data-target="3" data-suffix="+">3+</div><div class="ml">年产业战略经验</div></div>
+    <div class="mini"><div class="mv count" data-target="3" data-suffix="">3</div><div class="ml">篇一作学术论文</div></div>
+    <div class="mini"><div class="mv count" data-target="2" data-suffix="">2</div><div class="ml">份副省级重大规划编制参与</div></div>
+    <div class="mini"><div class="mv count" data-target="2" data-suffix="">2</div><div class="ml">个千万级孵化项目融资</div></div>
+    <div class="mini"><div class="mv count" data-target="10" data-final="N">N</div><div class="ml">份战略项目/行业研究/政策分析</div></div>
   </div>
 </section>
 
@@ -492,14 +531,15 @@
             </div>
           </div>
         </li>
-        <li><b>重大项目协同：</b>复盘五十亿至百亿级历史项目（麦当劳、欧菲光、华玻等）；运用 PE/PB/DCF/资产基础法估值，协助完成政府上会报告，常宝新材料（10 亿元固投）成功签约。
-          <div class="inline-metrics">
+        <li><b>重大项目协同：</b>复盘五十亿至百亿级历史项目；运用 PE/PB/DCF/资产基础法估值，协助完成政府上会报告，常宝新材料（10 亿元固投）成功签约。
+          <div class="proj-footer">
             <div class="mini"><div class="mv count" data-target="10" data-suffix="亿">10亿</div><div class="ml">常宝新材料固投签约</div></div>
-          </div>
-          <div class="logo-row">
-            <div class="logo brand-mcd"><span class="mono">M</span><span class="nm">麦当劳</span></div>
-            <div class="logo brand-ofilm"><span class="mono">欧</span><span class="nm">欧菲光</span></div>
-            <div class="logo brand-cb"><span class="mono">常</span><span class="nm">常宝新材料</span></div>
+            <div class="logo-row">
+              <div class="logo brand-mcd"><span class="mono">M</span><span class="nm">麦当劳</span></div>
+              <div class="logo brand-ofilm"><span class="mono">欧</span><span class="nm">欧菲光</span></div>
+              <div class="logo brand-cb"><span class="mono">常</span><span class="nm">常宝新材料</span></div>
+              <span class="logo-etc">…</span>
+            </div>
           </div>
         </li>
         <li><b>管理赋能：</b>访谈全司中后台与一线，输出投资选址研究、业务 SOP 与多渠道招商策略，实现业务指导标准化从 0 到 1 突破。
@@ -532,29 +572,32 @@
 <section id="pub" class="wrap">
   <div class="eyebrow">Publications</div>
   <h2 class="title">学术<span class="accent">成果</span></h2>
-  <p class="pub-sum">共 3 篇第一作者论文，其中 2 篇为期刊封面文章 ★</p>
+  <p class="pub-sum">共 3 篇第一作者论文，其中 2 篇为期刊封面文章 ★ · 点击各篇可下载全文</p>
   <div class="pubs">
-    <div class="panel pub reveal">
+    <a class="panel pub reveal" href="papers/pub01.pdf" download="《泡沫经济崩溃后日本青年群体的厌消费现象分析》.pdf" target="_blank" rel="noopener">
       <div class="idx">01</div>
       <div>
         <div class="name">《泡沫经济崩溃后日本青年群体的厌消费现象分析》<span class="role">第一作者</span></div>
         <div class="journal">《现代商贸工业》 · 2021.07 — 2022.04</div>
+        <div class="dl-hint">📄 点击下载全文 PDF</div>
       </div>
-    </div>
-    <div class="panel pub reveal d1">
+    </a>
+    <a class="panel pub reveal d1" href="papers/pub02.pdf" download="《FDI 在我国一线城市区位选择的影响因素分析》.pdf" target="_blank" rel="noopener">
       <div class="idx">02</div>
       <div>
         <div class="name">《FDI 在我国一线城市区位选择的影响因素分析》<span class="role">第一作者</span></div>
         <div class="journal">《合作经济与科技》<span class="star"> ★ 封面文章</span> · 2020.07 — 2020.10</div>
+        <div class="dl-hint">📄 点击下载全文 PDF</div>
       </div>
-    </div>
-    <div class="panel pub reveal d2">
+    </a>
+    <a class="panel pub reveal d2" href="papers/pub03.pdf" download="《“一带一路”背景下深圳特区在区域发展中的作用探究》.pdf" target="_blank" rel="noopener">
       <div class="idx">03</div>
       <div>
         <div class="name">《"一带一路"背景下深圳特区在区域发展中的作用探究》<span class="role">第一作者</span></div>
         <div class="journal">《中国集体经济》<span class="star"> ★ 封面文章</span> · 2020.07 — 2021.02</div>
+        <div class="dl-hint">📄 点击下载全文 PDF</div>
       </div>
-    </div>
+    </a>
   </div>
 </section>
 
@@ -566,10 +609,8 @@
     <div class="panel skill-card reveal">
       <h3><span class="ic">◆</span> 专业资质</h3>
       <div class="chips">
-        <span class="chip">证券从业资格考试</span>
-        <span class="chip">产业规划</span>
-        <span class="chip">政策研究</span>
-        <span class="chip">战略管理</span>
+        <span class="chip">证券从业资格</span>
+        <span class="chip">英语六级</span>
       </div>
     </div>
     <div class="panel skill-card reveal d1">
@@ -678,12 +719,14 @@
   function animateCount(el){
     const target = parseFloat(el.dataset.target);
     const suffix = el.dataset.suffix || '';
+    const finalText = el.dataset.final;
     const dur = 1500, start = performance.now();
     function step(now){
       const p = Math.min((now - start) / dur, 1);
       const eased = 1 - Math.pow(1 - p, 3);
       el.textContent = Math.round(target * eased) + suffix;
       if(p < 1) requestAnimationFrame(step);
+      else if(finalText) el.textContent = finalText;
     }
     requestAnimationFrame(step);
   }
@@ -705,6 +748,24 @@
     secs.forEach(s=>{ if(s.getBoundingClientRect().top<=120) cur=s; });
     links.forEach(a=>a.style.color = (a.getAttribute('href')==='#'+cur.id)?'var(--cyan)':'');
   });
+
+  // 移动端导航：汉堡按钮展开/收起菜单，点击任意链接后自动收起
+  const navEl = document.querySelector('nav');
+  const navToggle = document.querySelector('.nav-toggle');
+  if(navToggle){
+    navToggle.addEventListener('click',()=>navEl.classList.toggle('open'));
+    navEl.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>navEl.classList.remove('open')));
+  }
+
+  // 微信内置浏览器：不支持网页直接下载，显示提示条并下移导航
+  if(/MicroMessenger/i.test(navigator.userAgent)){
+    document.documentElement.classList.add('wx');
+    const t=document.getElementById('wxTip');
+    if(t) t.style.display='block';
+  }
+
+  // iOS Safari / 微信：默认不触发 :active，加一个空 touchstart 监听以激活触摸反馈
+  document.addEventListener('touchstart',()=>{},{passive:true});
 </script>
 </body>
 </html>
