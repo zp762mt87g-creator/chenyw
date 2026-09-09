@@ -104,8 +104,9 @@
   .panel::before{content:"";position:absolute;inset:0;border-radius:var(--radius);padding:1px;background:var(--grad);-webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);-webkit-mask-composite:xor;mask-composite:exclude;opacity:0;transition:.35s}.panel:hover,.panel:active{transform:translateY(-4px);box-shadow:0 18px 50px rgba(0,0,0,.45)}.panel:hover::before,.panel:active::before{opacity:.9}
 
   /* ====== 关于（含雷达图）====== */
-  .about-grid{display:grid;grid-template-columns:1.4fr 1fr;gap:24px}
-  .about-grid p{color:var(--muted);margin-bottom:18px;line-height:1.85}
+  .about-grid{display:grid;grid-template-columns:1.4fr 1fr;gap:24px;align-items:start}
+  .about-left{display:flex;flex-direction:column;gap:18px}
+  .about-grid p{color:var(--muted);margin-bottom:12px;line-height:1.75;font-size:.92rem}
   .radar-wrap{display:flex;flex-direction:column;align-items:center;justify-content:center}
   .radar{width:100%;max-width:320px}
   .radar .grid{fill:none;stroke:rgba(255,255,255,.08)}
@@ -128,19 +129,19 @@
   .mini .sl{font-size:.9rem;color:var(--muted);font-weight:600}  .mini:hover,.mini:active{border-color:var(--cyan);transform:translateY(-3px);box-shadow:0 10px 26px rgba(34,211,238,.18)}
 
   /* ====== 决策链路图（B 组：叙事型可视化）====== */
-  .flow{margin-top:38px}
-  .flow-head{font-size:.8rem;letter-spacing:2px;color:var(--cyan);text-align:center;margin-bottom:22px;text-transform:uppercase}
-  .flow-nodes{display:flex;justify-content:space-between;position:relative;padding:0 4%}
-  .flow-nodes::before{content:"";position:absolute;top:6px;left:6%;right:6%;height:2px;background:rgba(255,255,255,.12);border-radius:2px}
-  .flow-fill{position:absolute;top:6px;left:6%;height:2px;width:0;background:var(--grad);border-radius:2px;box-shadow:0 0 12px rgba(34,211,238,.65);z-index:1;transition:width 1.5s cubic-bezier(.2,.7,.2,1) .25s}
-  .flow.show .flow-fill{width:88%}
+  .flow{margin-top:0}
+  .flow-head{font-size:.72rem;letter-spacing:1.5px;color:var(--cyan);text-align:left;margin-bottom:14px;text-transform:uppercase}
+  .flow-nodes{display:flex;justify-content:space-between;position:relative;padding:0 2%}
+  .flow-nodes::before{content:"";position:absolute;top:5px;left:4%;right:4%;height:1.5px;background:rgba(255,255,255,.10);border-radius:2px}
+  .flow-fill{position:absolute;top:5px;left:4%;height:1.5px;width:0;background:var(--grad);border-radius:2px;box-shadow:0 0 8px rgba(34,211,238,.55);z-index:1;transition:width 1.5s cubic-bezier(.2,.7,.2,1) .25s}
+  .flow.show .flow-fill{width:92%}
   .fnode{flex:1;text-align:center;position:relative;z-index:2}
-  .fnode .dot{display:block;width:14px;height:14px;border-radius:50%;background:var(--grad);margin:0 auto 14px;box-shadow:0 0 12px rgba(34,211,238,.7);position:relative}
-  .fnode .dot::after{content:"";position:absolute;inset:-5px;border-radius:50%;border:1px solid rgba(34,211,238,.4);animation:pulse 2.4s ease-out infinite}
-  .fnode b{display:block;font-size:.92rem;color:#fff;font-weight:700;letter-spacing:.5px}
-  .fnode i{display:block;font-size:.7rem;color:var(--muted);margin-top:4px;font-style:normal}
+  .fnode .dot{display:block;width:11px;height:11px;border-radius:50%;background:var(--grad);margin:0 auto 8px;box-shadow:0 0 8px rgba(34,211,238,.6);position:relative}
+  .fnode .dot::after{content:"";position:absolute;inset:-4px;border-radius:50%;border:1px solid rgba(34,211,238,.35);animation:pulse 2.4s ease-out infinite}
+  .fnode b{display:block;font-size:.82rem;color:#fff;font-weight:700;letter-spacing:.3px}
+  .fnode i{display:block;font-size:.64rem;color:var(--muted);margin-top:2px;font-style:normal}
   @keyframes pulse{0%{transform:scale(.7);opacity:.9}70%{transform:scale(1.5);opacity:0}100%{opacity:0}}
-  @media(max-width:560px){.fnode b{font-size:.78rem}.fnode i{font-size:.6rem}.fnode .dot{width:11px;height:11px;margin-bottom:10px}}
+  @media(max-width:560px){.fnode b{font-size:.72rem}.fnode i{font-size:.58rem}.fnode .dot{width:9px;height:9px;margin-bottom:6px}}
 
   /* ====== 标题描边生长动画（B 组：SVG 风格描边等价实现）====== */
   h2.title::after{content:"";display:block;width:64px;height:3px;margin-top:14px;border-radius:3px;background:var(--grad);box-shadow:0 0 10px rgba(34,211,238,.5)}
@@ -385,11 +386,23 @@
   <div class="eyebrow">About</div>
   <h2 class="title">关于<span class="accent">我</span></h2>
   <div class="about-grid">
-    <div class="panel reveal">
-      <p>金融经济学科班出身，具备"学术 + 政府 + 企业"三重视角。硕士毕业于格拉斯哥大学亚当·斯密商学院，本科就读于深圳大学经济学院（辅修工商管理）。</p>
-      <p>现任深圳大学派驻深圳市工信局，从事产业规划与政策研究；此前在华夏幸福战略管理部负责新业务孵化、行业研究与重大项目协同，年度绩效位列部门最高。</p>
-      <p>熟悉产业经济、资产定价与数据分析，能独立完成从课题研究、政策起草到决策报告的全流程工作。</p>
-      <p>兼具研究深度与产品化表达，擅长把复杂议题拆解为清晰框架与可执行方案，适配战略研究、产业分析到互联网产品等复合岗位。</p>
+    <div class="about-left">
+      <div class="panel reveal">
+        <p>金融经济学科班，"学术＋政府＋企业"三重视角。硕士毕业于格拉斯哥大学亚当·斯密商学院，本科深圳大学经济学院（辅修工商管理）。</p>
+        <p>现任深圳大学派驻深圳市工信局从事产业规划与政策研究；此前在华夏幸福战略管理部负责新业务孵化与行业研究，年度绩效部门最高。</p>
+        <p>擅长从宏观研判到落地执行的完整闭环，适配战略研究、产业分析、商分投融等复合岗位。</p>
+      </div>
+      <div class="flow reveal">
+        <div class="flow-head">能力链路 · 从研判到落地</div>
+        <div class="flow-nodes">
+          <span class="flow-fill"></span>
+          <div class="fnode"><span class="dot"></span><b>洞察</b><i>信息拆解与研判</i></div>
+          <div class="fnode"><span class="dot"></span><b>框架</b><i>战略体系构建</i></div>
+          <div class="fnode"><span class="dot"></span><b>量化</b><i>数据驱动决策</i></div>
+          <div class="fnode"><span class="dot"></span><b>表达</b><i>方案产品化</i></div>
+          <div class="fnode"><span class="dot"></span><b>交付</b><i>可执行成果输出</i></div>
+        </div>
+      </div>
     </div>
     <div class="panel reveal d1">
       <div class="radar-wrap">
@@ -435,17 +448,6 @@
     <div class="mini"><div class="mv count" data-target="2" data-suffix="">2</div><div class="ml">个千万级孵化项目融资</div></div>
     <div class="mini"><div class="mv count" data-target="10" data-final="N">N</div><div class="ml">份战略项目/行业研究/政策分析</div></div>
   </div>
-      <div class="flow reveal">
-        <div class="flow-head">能力链路 · 从研判到落地</div>
-        <div class="flow-nodes">
-          <span class="flow-fill"></span>
-          <div class="fnode"><span class="dot"></span><b>研判</b><i>课题 / 政策拆解</i></div>
-          <div class="fnode"><span class="dot"></span><b>战略</b><i>框架设计</i></div>
-          <div class="fnode"><span class="dot"></span><b>估值</b><i>财务 / 投融</i></div>
-          <div class="fnode"><span class="dot"></span><b>产品化</b><i>方案表达</i></div>
-          <div class="fnode"><span class="dot"></span><b>落地</b><i>决策报告</i></div>
-        </div>
-      </div>
 </section>
 
 <!-- EDUCATION -->
