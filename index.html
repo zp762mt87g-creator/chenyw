@@ -280,7 +280,7 @@
 
   /* ====== 联系 / 页脚 ====== */
   .contact{text-align:center}
-  section.contact{padding-bottom:240px}
+  section.contact{padding-bottom:190px}
   .contact .title{margin-bottom:8px;display:inline-block}
   .contact .big{font-family:'PingFang SC','Microsoft YaHei',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;font-size:clamp(1.6rem,5vw,3rem);font-weight:700;background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent;margin-bottom:14px}
   .contact .links{display:flex;flex-wrap:wrap;justify-content:center;gap:14px;margin-top:10px}
@@ -352,13 +352,10 @@
   }
 
   /* ===== 华夏幸福·战略成果轴（hx- 前缀隔离，不污染全局） ===== */
-  .hx-rail{position:relative;padding-left:34px;margin-top:22px}
-  .hx-rail::before{content:"";position:absolute;left:11px;top:8px;bottom:8px;width:2px;background:linear-gradient(180deg,rgba(34,211,238,.7),rgba(168,85,247,.7));border-radius:2px}
+  .hx-rail{position:relative;margin-top:22px}
   .hx-node{position:relative;margin-bottom:26px;padding:16px 18px;border-radius:14px;border:1px solid transparent;transition:transform .3s,border-color .3s,background .3s}
   .hx-node:hover{transform:translateY(-3px);border-color:var(--panel-border);background:rgba(255,255,255,.02)}
   .hx-node:last-child{margin-bottom:0}
-  .hx-dot{position:absolute;left:-30px;top:22px;width:13px;height:13px;border-radius:50%;background:var(--grad);box-shadow:0 0 12px rgba(34,211,238,.7)}
-  .hx-dot::after{content:"";position:absolute;inset:-5px;border-radius:50%;border:1px solid rgba(34,211,238,.35);animation:hxpulse 2.4s ease-out infinite}
   @keyframes hxpulse{0%{transform:scale(.7);opacity:.9}70%{transform:scale(1.6);opacity:0}100%{opacity:0}}
   .hx-ntitle{font-size:1rem;font-weight:700;color:#fff;margin-bottom:8px}
   .hx-ntitle b{background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
@@ -408,12 +405,6 @@
   .hx-stamp.big{display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;width:116px;min-height:108px;padding:14px;border-radius:18px;font-size:1rem;background:rgba(34,211,238,.08);box-shadow:0 6px 22px rgba(0,0,0,.3)}
   /* 节点3 重做：规模条 + 成果卡 + 复盘案例行 */
   .hx-case{display:flex;flex-direction:column;gap:14px;max-width:480px}
-  .hx-cs{display:flex;align-items:center;gap:10px}
-  .hx-cs-lab{font-size:.72rem;color:var(--muted);font-weight:600;letter-spacing:.5px;flex-shrink:0}
-  .hx-cs-bar{flex:1;height:6px;border-radius:999px;background:rgba(255,255,255,.10);position:relative;overflow:hidden}
-  .hx-cs-bar i{position:absolute;left:0;top:0;bottom:0;width:0;border-radius:999px;background:linear-gradient(90deg,#a855f7,#22d3ee);transition:width 1.2s cubic-bezier(.2,.7,.2,1)}
-  .hx-cs-bar.run i{width:100%}
-  .hx-cs-rng{font-size:.74rem;color:#c9a8f5;font-weight:700;white-space:nowrap}
   .hx-deal{position:relative;display:flex;align-items:center;gap:15px;padding:16px 18px;border-radius:16px;background:linear-gradient(120deg,rgba(34,211,238,.11),rgba(168,85,247,.09));border:1px solid rgba(34,211,238,.30);overflow:hidden;transition:border-color .25s,box-shadow .25s}
   .hx-deal:hover{border-color:var(--cyan);box-shadow:0 8px 26px rgba(34,211,238,.14)}
   .hx-deal::after{content:"";position:absolute;inset:0;pointer-events:none;background:linear-gradient(100deg,transparent 35%,rgba(255,255,255,.08) 50%,transparent 65%);transform:translateX(-100%)}
@@ -427,7 +418,7 @@
   .hx-dl-v .hx-count{font-size:2.1rem;font-weight:900;line-height:1;background:var(--grad);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;color:transparent}
   .hx-dl-v em{font-style:normal;font-size:.92rem;font-weight:800;color:var(--cyan)}
   .hx-rep{display:flex;align-items:center;gap:9px;flex-wrap:wrap}
-  .hx-rep-lab{font-size:.72rem;color:var(--muted);font-weight:600}
+  .hx-rep-lab{flex:0 0 100%;font-size:.72rem;color:var(--muted);font-weight:600}
   .hx-rep-co{display:inline-flex;align-items:center;gap:7px;padding:5px 12px 5px 5px;border-radius:999px;background:rgba(255,255,255,.03);border:1px solid var(--panel-border);font-size:.78rem;color:var(--text);transition:.25s}
   .hx-rep-co:hover{border-color:var(--c,#22d3ee);transform:translateY(-2px)}
   .hx-rep-co .hx-cm{width:24px;height:24px}
@@ -457,7 +448,7 @@
   .hx-arcwrap.on .hx-arcfg{stroke-dashoffset:31.4}
   .hx-arccap{font-size:.84rem;color:var(--muted)}
   .hx-arccap b{display:block;color:#fff;font-size:1rem;background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
-  @media(max-width:560px){.hx-cmp{width:96px;margin-left:auto}.hx-top1{flex-wrap:wrap}.hx-stamp.big{width:100%}.hx-tracks{max-width:100%}.hx-result{max-width:100%}.hx-case{max-width:100%}.hx-deal{flex-wrap:wrap;gap:12px;padding:14px}.hx-dl-mid{order:3;flex:1 1 100%}.hx-dl-v{margin-left:auto}.hx-dl-v .hx-count{font-size:1.8rem}.hx-cs-lab{font-size:.68rem}}
+  @media(max-width:560px){.hx-cmp{width:96px;margin-left:auto}.hx-top1{flex-wrap:wrap}.hx-stamp.big{width:100%}.hx-tracks{max-width:100%}.hx-result{max-width:100%}.hx-case{max-width:100%}.hx-deal{flex-wrap:wrap;gap:12px;padding:14px}.hx-dl-mid{order:3;flex:1 1 100%}.hx-dl-v{margin-left:auto}.hx-dl-v .hx-count{font-size:2rem}.hx-total{width:100%;justify-content:center}.hx-rep{gap:7px}.hx-rep-co{padding:4px 10px 4px 4px;font-size:.74rem}}
 </style>
 </head>
 <body>
@@ -661,7 +652,6 @@
       <div class="hx-rail">
         <!-- 节点1：新业务孵化 -->
         <div class="hx-node">
-          <span class="hx-dot"></span>
           <div class="hx-ntitle"><b>新业务孵化</b>及商业模式研究</div>
           <div class="hx-ndesc">对公司招商引资进行迭代升级，获各服务政府高度肯定；同时通过对商业模式、应用场景、兑换通道进行设计，寻找新业务增长极，目前成功孵化出充电桩、光伏、低空经济三大赛道，低空公司（零界科技）和充电桩公司（三好充电）成立并成功获得累计4000万元融资。</div>
           <div class="hx-tracks">
@@ -691,7 +681,6 @@
 
         <!-- 节点2：行业研究 No.1 -->
         <div class="hx-node">
-          <span class="hx-dot"></span>
           <div class="hx-ntitle"><b>行业研究</b>及投研分析</div>
           <div class="hx-ndesc">针对公司管理层关注的重要会议、热点事件、TMT行业趋势等进行研究并输出专题报告，同时为管理层提供内参和公众号外宣，例：低空经济行业白皮书、公司市值管理计划、三中全会解读、人工智能、充电桩出海分析等，公众号文章单篇和总量阅读总量均为全司最高。</div>
           <div class="hx-top1">
@@ -710,15 +699,9 @@
 
         <!-- 节点3：重大项目协同 -->
         <div class="hx-node">
-          <span class="hx-dot"></span>
           <div class="hx-ntitle"><b>重大项目协同推进</b>及复盘</div>
           <div class="hx-ndesc">对公司历史大项目（五十亿到百亿级）进行专家访谈，按照参与主体和项目流程进行复盘分析，已独立封装宣讲麦当劳、欧菲光和华玻等项目；对公司在推大项目进行协同推进，包括但不限于运用PE、PB、DCF、资产基础法等估值模型进行项目评估，协助完成政府上会报告和企业投资计划书、项目等材料撰写，代表案例常宝新材料（10亿元一期固定资产投资）成功签约。</div>
           <div class="hx-case">
-            <div class="hx-cs hx-anim">
-              <span class="hx-cs-lab">历史大项目规模</span>
-              <span class="hx-cs-bar"><i></i></span>
-              <span class="hx-cs-rng">50亿 → 100亿</span>
-            </div>
             <div class="hx-deal hx-anim">
               <span class="hx-dl-ic"><svg viewBox="0 0 24 24"><path d="M6 3 h8 l4 4 v14 H6 Z" fill="none" stroke="#22d3ee" stroke-width="1.8"/><path d="M14 3 v4 h4" fill="none" stroke="#22d3ee" stroke-width="1.8"/><path d="M9 14 l2.2 2.2 L15.4 12" fill="none" stroke="#22d3ee" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
               <div class="hx-dl-mid">
@@ -740,7 +723,6 @@
 
         <!-- 节点4：管理赋能 0→1 -->
         <div class="hx-node">
-          <span class="hx-dot"></span>
           <div class="hx-ntitle"><b>管理赋能和业务赋能</b></div>
           <div class="hx-ndesc">针对业务一线的业务渠道和业务能力两大核心需求，通过访谈全司所有中后台部门及数十位领导和一线业务人员，独立完成企业投资选址研究报告及业务sop、多渠道招商策略等若干报告和配套表单输出，实现业务渠道全覆盖研究和公司业务指导标准化从0到1的突破。</div>
           <div class="hx-toggle" id="hxtg">
@@ -753,7 +735,6 @@
 
         <!-- 节点5：战略复盘 75% -->
         <div class="hx-node">
-          <span class="hx-dot"></span>
           <div class="hx-ntitle"><b>战略复盘</b>及规划</div>
           <div class="hx-ndesc">独立完成公司的业绩和能力建设复盘，并根据领导要求进行能力建设规划文件撰写，并通过复盘SOP参与制定和优化，提升复盘效率达75%。</div>
           <div class="hx-arcwrap" id="hxarc">
@@ -999,14 +980,14 @@
     }
     function stopCount(el){ if(el._raf) cancelAnimationFrame(el._raf); el.textContent='0'; }
     function play(el){
-      el.querySelectorAll('.hx-fill,.hx-cs-bar').forEach(function(f){f.classList.add('run');});
+      el.querySelectorAll('.hx-fill').forEach(function(f){f.classList.add('run');});
       if(el.classList.contains('hx-deal')) el.classList.add('run');
       el.querySelectorAll('.hx-count').forEach(function(c){
         var to=parseInt(c.dataset.to,10); if(!isNaN(to)) countUp(c,to,1400);
       });
     }
     function resetEl(el){
-      el.querySelectorAll('.hx-fill,.hx-cs-bar').forEach(function(f){f.classList.remove('run');});
+      el.querySelectorAll('.hx-fill').forEach(function(f){f.classList.remove('run');});
       if(el.classList.contains('hx-deal')) el.classList.remove('run');
       el.querySelectorAll('.hx-count').forEach(stopCount);
     }
