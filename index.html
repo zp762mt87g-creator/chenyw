@@ -286,14 +286,21 @@
   .contact .links{display:flex;flex-wrap:wrap;justify-content:center;gap:14px;margin-top:10px}
 
   /* 个人作品集下载模块（预留占位，待用户上传文件后填 href） */
-  .portfolio{display:flex;align-items:center;gap:18px;max-width:560px;margin:0 auto 30px;padding:18px 24px;border-radius:14px;background:var(--panel);border:1px solid var(--panel-border);text-align:left;position:relative;overflow:hidden}
+  .portfolio{max-width:560px;margin:0 auto 30px;padding:18px 20px;border-radius:14px;background:var(--panel);border:1px solid var(--panel-border);text-align:left;position:relative;overflow:hidden}
   .portfolio::before{content:"";position:absolute;left:0;top:0;bottom:0;width:3px;background:var(--grad)}
+  .portfolio .pf-head{display:flex;align-items:center;gap:14px}
   .portfolio .pf-ic{font-size:1.9rem;line-height:1;filter:drop-shadow(0 0 10px rgba(34,211,238,.4))}
   .portfolio .pf-txt{flex:1;text-align:left;min-width:0}
   .portfolio .pf-name{font-size:1.02rem;font-weight:700}
   .portfolio .pf-cap{font-size:.76rem;color:var(--muted);margin-top:3px}
-  .portfolio .btn{padding:11px 20px;font-size:.86rem;white-space:nowrap}
   .portfolio .pf-tag{display:inline-block;margin-left:8px;padding:2px 8px;border-radius:999px;font-size:.66rem;color:var(--cyan);border:1px solid var(--panel-border);background:rgba(34,211,238,.08);vertical-align:middle}
+  .pf-list{display:flex;flex-direction:column;gap:10px;margin-top:15px}
+  .pf-card{display:flex;align-items:center;gap:11px;padding:12px 14px;border-radius:12px;background:rgba(255,255,255,.03);border:1px solid var(--panel-border);text-decoration:none;color:inherit;transition:.25s}
+  .pf-card:hover,.pf-card:active{border-color:var(--cyan);background:rgba(34,211,238,.07);transform:translateY(-2px);box-shadow:0 6px 20px rgba(34,211,238,.12)}
+  .pf-ctag{flex-shrink:0;padding:3px 9px;border-radius:999px;font-size:.68rem;font-weight:600;color:var(--cyan);border:1px solid rgba(34,211,238,.35);background:rgba(34,211,238,.09);white-space:nowrap}
+  .pf-ctitle{flex:1;min-width:0;font-size:.88rem;font-weight:600;color:var(--text);line-height:1.45}
+  .pf-dl{flex-shrink:0;font-size:.78rem;color:var(--cyan);white-space:nowrap}
+  @media(max-width:560px){.pf-card{flex-wrap:wrap;gap:8px}.pf-ctitle{flex:1 1 100%;order:3;font-size:.85rem}}
   .contact .links a{padding:12px 22px;border-radius:12px;border:1px solid var(--panel-border);background:var(--panel);transition:.3s;font-size:.9rem}.contact .links a:hover,.contact .links a:active{border-color:var(--cyan);color:var(--cyan);transform:translateY(-3px)}
   footer{padding:52px 0;text-align:center;color:var(--muted);font-size:.78rem;border-top:1px solid var(--panel-border);margin-top:64px}
 
@@ -833,14 +840,32 @@
   <div class="eyebrow" style="justify-content:center">Contact</div>
   <h2 class="title">保持<span class="accent">联系</span></h2>
   <div class="big">期待与你合作</div>
-  <!-- 个人作品集下载模块（预留占位）：把作品文件放到 index.html 同级目录（建议命名 作品集.pdf），再把下面 a 的 href 改为对应文件名、去掉 onclick 即可启用下载 -->
+  <!-- 个人作品集：3 篇代表作，PDF 存于仓库根目录（同源相对路径，download 属性可指定中文文件名） -->
   <div class="portfolio reveal" id="portfolio">
-    <div class="pf-ic">📂</div>
-    <div class="pf-txt">
-      <div class="pf-name">个人作品集<span class="pf-tag">即将上传</span></div>
-      <div class="pf-cap">深度产业研究 · 战略报告 · 项目案例精选</div>
+    <div class="pf-head">
+      <div class="pf-ic">📂</div>
+      <div class="pf-txt">
+        <div class="pf-name">个人作品集<span class="pf-tag">3 篇代表作</span></div>
+        <div class="pf-cap">行业研究 · 宏观经济 · 政策解读，点击即可下载全文</div>
+      </div>
     </div>
-    <a class="btn primary" href="#" onclick="event.preventDefault();showToast('作品集即将上传，敬请期待')">⬇ 下载作品集</a>
+    <div class="pf-list">
+      <a class="pf-card" href="p1-lowaltitude.pdf" download="低空经济白皮书（主刊）.pdf" onclick="showToast('📥 已开始下载｜更多商业分析、投融项目等作品欢迎邮件联系索取')">
+        <span class="pf-ctag">行业研究</span>
+        <span class="pf-ctitle">低空经济白皮书（主刊）</span>
+        <span class="pf-dl">⬇ 下载</span>
+      </a>
+      <a class="pf-card" href="p2-investment.pdf" download="新形势下产业经济发展暨招商引资的突围与重构.pdf" onclick="showToast('📥 已开始下载｜更多商业分析、投融项目等作品欢迎邮件联系索取')">
+        <span class="pf-ctag">宏观经济</span>
+        <span class="pf-ctitle">新形势下产业经济发展暨招商引资的突围与重构</span>
+        <span class="pf-dl">⬇ 下载</span>
+      </a>
+      <a class="pf-card" href="p3-plenum.pdf" download="三中全会专题报告（微信公众号发布版）.pdf" onclick="showToast('📥 已开始下载｜更多商业分析、投融项目等作品欢迎邮件联系索取')">
+        <span class="pf-ctag">政策解读</span>
+        <span class="pf-ctitle">三中全会专题报告（微信公众号发布版）</span>
+        <span class="pf-dl">⬇ 下载</span>
+      </a>
+    </div>
   </div>
   <div class="links">
     <a href="tel:13729991998" class="copyable" data-copy="13729991998" onclick="copyContact(event,this)">📱 137 2999 1998</a>
