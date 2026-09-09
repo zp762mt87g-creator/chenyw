@@ -279,7 +279,7 @@
   .chip{padding:7px 14px;border-radius:9px;font-size:.84rem;background:rgba(255,255,255,.04);border:1px solid var(--panel-border);transition:.25s}.chip:hover,.chip:active{border-color:var(--cyan);color:var(--cyan);transform:translateY(-2px)}
 
   /* ====== 联系 / 页脚 ====== */
-  .contact{text-align:center;padding-bottom:184px}
+  .contact{text-align:center;padding-bottom:256px}
   .contact .title{margin-bottom:8px;display:inline-block}
   .contact .big{font-family:'PingFang SC','Microsoft YaHei',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;font-size:clamp(1.6rem,5vw,3rem);font-weight:700;background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent;margin-bottom:14px}
   .contact .links{display:flex;flex-wrap:wrap;justify-content:center;gap:14px;margin-top:10px}
@@ -410,8 +410,8 @@
   .hx-toggle:hover{border-color:var(--cyan)}
   .hx-tnum{font-weight:800;font-size:1.2rem;color:var(--text);transition:color .3s}
   .hx-toggle.on .hx-tnum:last-of-type{color:var(--cyan)}
-  .hx-tog{width:50px;height:26px;border-radius:999px;background:rgba(255,255,255,.14);position:relative;flex-shrink:0;transition:background .3s}
-  .hx-tog .hx-knob{position:absolute;top:3px;left:3px;width:20px;height:20px;border-radius:50%;background:#fff;transition:left .3s cubic-bezier(.2,.7,.2,1)}
+  .hx-tog{width:50px;height:26px;border-radius:999px;background:rgba(255,255,255,.14);position:relative;flex-shrink:0;transition:background .9s}
+  .hx-tog .hx-knob{position:absolute;top:3px;left:3px;width:20px;height:20px;border-radius:50%;background:#fff;transition:left .9s cubic-bezier(.2,.7,.2,1)}
   .hx-toggle.on .hx-tog{background:var(--grad);box-shadow:var(--glow)}
   .hx-toggle.on .hx-tog .hx-knob{left:27px}
   .hx-ttag{font-size:.82rem;color:var(--muted)}
@@ -870,7 +870,9 @@
       if(e.isIntersecting){
         e.target.classList.add('show');
         if(e.target.classList.contains('bar-fill')) e.target.style.width = e.target.style.getPropertyValue('--w');
-        io.unobserve(e.target);
+      } else {
+        e.target.classList.remove('show');
+        if(e.target.classList.contains('bar-fill')) e.target.style.width = '0';
       }
     });
   },{threshold:.15});
@@ -896,7 +898,8 @@
   }
   const countIO = new IntersectionObserver((entries)=>{
     entries.forEach(e=>{
-      if(e.isIntersecting){ animateCount(e.target); countIO.unobserve(e.target); }
+      if(e.isIntersecting){ animateCount(e.target); }
+      else { e.target.textContent = '0' + (e.dataset.suffix || ''); }
     });
   },{threshold:.5});
   document.querySelectorAll('.count').forEach(el=>{
@@ -932,32 +935,41 @@
   document.addEventListener('touchstart',()=>{},{passive:true});
 </script>
 
-  <!-- 华夏幸福·战略成果轴 交互 -->
+  <!-- 华夏幸福·战略成果轴 交互（滑入重放） -->
   <script>
   (function(){
     var tg=document.getElementById('hxtg');
-    if(tg){
-      tg.addEventListener('click',function(){this.classList.toggle('on');});
-      var tio=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){tg.classList.add('on');tio.unobserve(e.target);}});},{threshold:.4});
-      tio.observe(tg);
-    }
+    var arc=document.getElementById('hxarc');
+    var arcNum=document.getElementById('hxArcNum');
     function countUp(el,to,dur){
       var t0=null;
       function step(ts){if(!t0)t0=ts;var p=Math.min((ts-t0)/dur,1);el.textContent=Math.round(to*(1-Math.pow(1-p,3)));if(p<1)requestAnimationFrame(step);}
       requestAnimationFrame(step);
     }
-    window.addEventListener('load',function(){
-      var arc=document.getElementById('hxarc');
+    function runHx(){
+      if(tg) tg.classList.add('on');
       if(arc){
-        setTimeout(function(){arc.classList.add('on');},200);
-        var an=document.getElementById('hxArcNum'),t0=null,dur=1400,to=75;
-        function stepA(ts){if(!t0)t0=ts;var p=Math.min((ts-t0)/dur,1);an.textContent=Math.round(to*(1-Math.pow(1-p,3)));if(p<1)requestAnimationFrame(stepA);}
-        requestAnimationFrame(stepA);
+        arc.classList.add('on');
+        if(arcNum){ arcNum.textContent='0'; var t0=null,dur=1400,to=75;
+          function stepA(ts){if(!t0)t0=ts;var p=Math.min((ts-t0)/dur,1);arcNum.textContent=Math.round(to*(1-Math.pow(1-p,3)));if(p<1)requestAnimationFrame(stepA);}
+          requestAnimationFrame(stepA);
+        }
       }
-      document.querySelectorAll('.hx-count').forEach(function(el){
-        countUp(el,parseInt(el.dataset.to,10),1200);
-      });
-    });
+      document.querySelectorAll('.hx-count').forEach(function(el){ el.textContent='0'; countUp(el,parseInt(el.dataset.to,10),1200); });
+    }
+    function resetHx(){
+      if(tg) tg.classList.remove('on');
+      if(arc) arc.classList.remove('on');
+      if(arcNum) arcNum.textContent='0';
+      document.querySelectorAll('.hx-count').forEach(function(el){ el.textContent='0'; });
+    }
+    if(tg){
+      tg.addEventListener('click',function(){this.classList.toggle('on');});
+      var hxIO=new IntersectionObserver(function(es){es.forEach(function(e){
+        if(e.isIntersecting) runHx(); else resetHx();
+      });},{threshold:.35});
+      hxIO.observe(tg);
+    }
   })();
   </script>
 </body>
