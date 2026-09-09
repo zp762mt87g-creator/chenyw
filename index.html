@@ -279,7 +279,8 @@
   .chip{padding:7px 14px;border-radius:9px;font-size:.84rem;background:rgba(255,255,255,.04);border:1px solid var(--panel-border);transition:.25s}.chip:hover,.chip:active{border-color:var(--cyan);color:var(--cyan);transform:translateY(-2px)}
 
   /* ====== 联系 / 页脚 ====== */
-  .contact{text-align:center;padding-bottom:256px}
+  .contact{text-align:center}
+  section.contact{padding-bottom:240px}
   .contact .title{margin-bottom:8px;display:inline-block}
   .contact .big{font-family:'PingFang SC','Microsoft YaHei',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;font-size:clamp(1.6rem,5vw,3rem);font-weight:700;background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent;margin-bottom:14px}
   .contact .links{display:flex;flex-wrap:wrap;justify-content:center;gap:14px;margin-top:10px}
@@ -318,6 +319,7 @@
   nav a:not(.brand){display:none;order:3;width:100%;text-align:center;padding:10px}
   nav.open a:not(.brand){display:block}
     section.wrap{padding:28px 24px}
+    section.contact{padding-bottom:150px}
     /* 移动端 Hero 按钮三合一行 */
     .hero .cta{gap:8px;margin-top:28px}
     .hero .cta .btn{padding:10px 14px;font-size:.82rem;border-radius:10px}
@@ -369,18 +371,16 @@
   .hx-nm{width:62px;color:var(--muted);flex-shrink:0}
   .hx-lane.lit .hx-nm{color:var(--text)}
   .hx-bar{flex:1;height:8px;border-radius:999px;background:rgba(255,255,255,.10);overflow:hidden;position:relative}
-  .hx-fill{position:absolute;top:0;bottom:0;border-radius:999px;background:var(--grad);box-shadow:0 0 10px rgba(34,211,238,.5);transform-origin:left;animation:hxfill 1.2s cubic-bezier(.2,.7,.2,1) forwards}
-  .hx-fill.s1{left:0;width:55%;background:linear-gradient(120deg,#60a5fa,#22d3ee)}
-  .hx-fill.s2{left:55%;width:45%;background:linear-gradient(120deg,#22d3ee,#a855f7);box-shadow:0 0 10px rgba(168,85,247,.5)}
-  @keyframes hxfill{from{transform:scaleX(0)}to{transform:scaleX(1)}}
+  .hx-fill{position:absolute;top:0;bottom:0;border-radius:999px;background:var(--grad);box-shadow:0 0 10px rgba(34,211,238,.5);transform-origin:left;transform:scaleX(0);transition:transform 1.2s cubic-bezier(.2,.7,.2,1)}
+  .hx-fill.run{transform:scaleX(1)}
   .hx-car{width:22px;height:14px;flex-shrink:0;display:flex;align-items:center}
   .hx-car svg{width:22px;height:14px;display:block}
-  .hx-amt{font-size:.74rem;color:var(--cyan);font-weight:700;white-space:nowrap}
+  .hx-amt{font-size:.92rem;color:var(--cyan);font-weight:800;white-space:nowrap}
   .hx-lane.verified{border-color:rgba(96,165,250,.4);background:rgba(96,165,250,.06)}
   .hx-lane.verified .hx-nm{color:var(--blue)}
   .hx-lane.verified .hx-verify{font-size:.72rem;color:var(--blue);font-weight:700;white-space:nowrap}
   .hx-tag10{display:inline-flex;align-items:center;gap:6px;margin-top:10px;padding:4px 12px;border-radius:999px;border:1px dashed var(--blue);color:var(--blue);font-size:.72rem;font-weight:600}
-  .hx-total{display:inline-flex;align-items:center;gap:8px;margin-top:10px;padding:7px 16px;border-radius:999px;background:var(--grad);color:#06121f;font-weight:800;font-size:.86rem}
+  .hx-total{display:inline-flex;align-items:center;gap:8px;margin-top:12px;padding:9px 18px;border-radius:999px;background:var(--grad);color:#06121f;font-weight:800;font-size:.98rem}
   .hx-top1{display:flex;align-items:center;gap:16px;padding:14px 18px;border-radius:14px;background:rgba(255,255,255,.03);border:1px solid var(--panel-border);max-width:480px;transition:.25s}
   .hx-top1:hover{border-color:var(--cyan);box-shadow:0 8px 26px rgba(34,211,238,.16)}
   .hx-badge{width:54px;height:54px;border-radius:14px;background:var(--grad);display:flex;align-items:center;justify-content:center;font-weight:900;font-size:1.5rem;color:#06121f;flex-shrink:0;box-shadow:var(--glow)}
@@ -399,13 +399,48 @@
   .hx-co:hover .hx-cm{transform:scale(1.12);box-shadow:0 0 14px var(--c,#22d3ee)}
   .hx-cm{width:27px;height:27px;border-radius:50%;display:flex;align-items:center;justify-content:center;background:var(--c,#22d3ee);flex-shrink:0;box-shadow:0 0 0 1px rgba(255,255,255,.14),0 2px 8px rgba(0,0,0,.35);transition:transform .25s,box-shadow .25s}
   .hx-cm svg{width:17px;height:17px;display:block}
-  .hx-co.hx-more{border-style:dashed;color:var(--muted);font-weight:800;letter-spacing:2px;padding:6px 12px;gap:0}
-  .hx-co.hx-more .hx-cm{display:none}
+  .hx-co.hx-more,.hx-rep-co.hx-more{border-style:dashed;color:var(--muted);font-weight:800;letter-spacing:2px;padding:6px 12px;gap:0}
+  .hx-co.hx-more .hx-cm,.hx-rep-co.hx-more .hx-cm{display:none}
   .hx-scaletag{display:inline-flex;align-items:center;gap:6px;padding:5px 13px;border-radius:999px;background:rgba(168,85,247,.10);border:1px solid rgba(168,85,247,.35);color:#c9a8f5;font-size:.74rem;font-weight:600;margin-bottom:12px}
   .hx-stamp{display:inline-flex;align-items:center;gap:8px;padding:8px 16px;border-radius:10px;border:1px dashed var(--cyan);color:var(--cyan);font-weight:700;font-size:.84rem;background:rgba(34,211,238,.06);transition:.25s}
   .hx-stamp:hover{background:rgba(34,211,238,.14);box-shadow:0 0 18px rgba(34,211,238,.3)}
   .hx-r3{display:flex;gap:16px;align-items:stretch;flex-wrap:wrap;margin-bottom:12px}
   .hx-stamp.big{display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;width:116px;min-height:108px;padding:14px;border-radius:18px;font-size:1rem;background:rgba(34,211,238,.08);box-shadow:0 6px 22px rgba(0,0,0,.3)}
+  /* 节点3 重做：规模条 + 成果卡 + 复盘案例行 */
+  .hx-case{display:flex;flex-direction:column;gap:14px;max-width:480px}
+  .hx-cs{display:flex;align-items:center;gap:10px}
+  .hx-cs-lab{font-size:.72rem;color:var(--muted);font-weight:600;letter-spacing:.5px;flex-shrink:0}
+  .hx-cs-bar{flex:1;height:6px;border-radius:999px;background:rgba(255,255,255,.10);position:relative;overflow:hidden}
+  .hx-cs-bar i{position:absolute;left:0;top:0;bottom:0;width:0;border-radius:999px;background:linear-gradient(90deg,#a855f7,#22d3ee);transition:width 1.2s cubic-bezier(.2,.7,.2,1)}
+  .hx-cs-bar.run i{width:100%}
+  .hx-cs-rng{font-size:.74rem;color:#c9a8f5;font-weight:700;white-space:nowrap}
+  .hx-deal{position:relative;display:flex;align-items:center;gap:15px;padding:16px 18px;border-radius:16px;background:linear-gradient(120deg,rgba(34,211,238,.11),rgba(168,85,247,.09));border:1px solid rgba(34,211,238,.30);overflow:hidden;transition:border-color .25s,box-shadow .25s}
+  .hx-deal:hover{border-color:var(--cyan);box-shadow:0 8px 26px rgba(34,211,238,.14)}
+  .hx-deal::after{content:"";position:absolute;inset:0;pointer-events:none;background:linear-gradient(100deg,transparent 35%,rgba(255,255,255,.08) 50%,transparent 65%);transform:translateX(-100%)}
+  .hx-deal.run::after{transform:translateX(100%);transition:transform 1.3s ease .15s}
+  .hx-dl-ic{position:relative;width:46px;height:46px;border-radius:13px;flex-shrink:0;display:flex;align-items:center;justify-content:center;background:rgba(34,211,238,.14);border:1px solid rgba(34,211,238,.35)}
+  .hx-dl-ic svg{width:24px;height:24px;display:block}
+  .hx-dl-mid{position:relative;flex:1;min-width:0}
+  .hx-dl-k{font-size:.72rem;color:var(--muted);letter-spacing:.5px}
+  .hx-dl-n{font-size:.88rem;color:#fff;font-weight:600;margin-top:3px}
+  .hx-dl-v{position:relative;display:flex;align-items:baseline;gap:3px;flex-shrink:0}
+  .hx-dl-v .hx-count{font-size:2.1rem;font-weight:900;line-height:1;background:var(--grad);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;color:transparent}
+  .hx-dl-v em{font-style:normal;font-size:.92rem;font-weight:800;color:var(--cyan)}
+  .hx-rep{display:flex;align-items:center;gap:9px;flex-wrap:wrap}
+  .hx-rep-lab{font-size:.72rem;color:var(--muted);font-weight:600}
+  .hx-rep-co{display:inline-flex;align-items:center;gap:7px;padding:5px 12px 5px 5px;border-radius:999px;background:rgba(255,255,255,.03);border:1px solid var(--panel-border);font-size:.78rem;color:var(--text);transition:.25s}
+  .hx-rep-co:hover{border-color:var(--c,#22d3ee);transform:translateY(-2px)}
+  .hx-rep-co .hx-cm{width:24px;height:24px}
+  .hx-rep-co .hx-cm svg{width:15px;height:15px}
+  .hx-result{display:flex;flex-direction:column;gap:3px;padding:15px 18px;border-radius:14px;background:linear-gradient(135deg,rgba(34,211,238,.12),rgba(168,85,247,.10));border:1px solid rgba(34,211,238,.35);max-width:480px;margin-bottom:4px}
+  .hx-result-k{font-size:.74rem;color:var(--muted)}
+  .hx-result-v{font-size:1.9rem;font-weight:900;line-height:1.1;background:var(--grad);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;color:transparent}
+  .hx-result-unit{font-size:1rem;font-weight:700;-webkit-text-fill-color:transparent}
+  .hx-result-n{font-size:.78rem;color:var(--muted);margin-top:3px}
+  .hx-label{display:flex;align-items:center;gap:8px;font-size:.72rem;color:var(--muted);font-weight:600;letter-spacing:.6px;margin:16px 0 9px}
+  .hx-label::before{content:"";width:14px;height:2px;border-radius:2px;background:var(--grad)}
+  .hx-vmethods{display:flex;flex-wrap:wrap;gap:8px}
+  .hx-vmethods span{padding:5px 13px;border-radius:8px;background:rgba(255,255,255,.04);border:1px solid var(--panel-border);font-size:.78rem;color:var(--text)}
   .hx-toggle{display:inline-flex;align-items:center;gap:12px;padding:12px 20px;background:rgba(255,255,255,.03);border:1px solid var(--panel-border);border-radius:12px;cursor:pointer;user-select:none;transition:.25s}
   .hx-toggle:hover{border-color:var(--cyan)}
   .hx-tnum{font-weight:800;font-size:1.2rem;color:var(--text);transition:color .3s}
@@ -422,7 +457,7 @@
   .hx-arcwrap.on .hx-arcfg{stroke-dashoffset:31.4}
   .hx-arccap{font-size:.84rem;color:var(--muted)}
   .hx-arccap b{display:block;color:#fff;font-size:1rem;background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
-  @media(max-width:560px){.hx-cmp{width:96px;margin-left:auto}.hx-top1{flex-wrap:wrap}.hx-r3{flex-direction:column;align-items:stretch}.hx-stamp.big{width:100%}.hx-tracks{max-width:100%}}
+  @media(max-width:560px){.hx-cmp{width:96px;margin-left:auto}.hx-top1{flex-wrap:wrap}.hx-stamp.big{width:100%}.hx-tracks{max-width:100%}.hx-result{max-width:100%}.hx-case{max-width:100%}.hx-deal{flex-wrap:wrap;gap:12px;padding:14px}.hx-dl-mid{order:3;flex:1 1 100%}.hx-dl-v{margin-left:auto}.hx-dl-v .hx-count{font-size:1.8rem}.hx-cs-lab{font-size:.68rem}}
 </style>
 </head>
 <body>
@@ -630,28 +665,28 @@
           <div class="hx-ntitle"><b>新业务孵化</b>及商业模式研究</div>
           <div class="hx-ndesc">对公司招商引资进行迭代升级，获各服务政府高度肯定；同时通过对商业模式、应用场景、兑换通道进行设计，寻找新业务增长极，目前成功孵化出充电桩、光伏、低空经济三大赛道，低空公司（零界科技）和充电桩公司（三好充电）成立并成功获得累计4000万元融资。</div>
           <div class="hx-tracks">
-            <div class="hx-lane lit">
+            <div class="hx-lane lit hx-anim">
               <span class="hx-ico"><svg viewBox="0 0 24 24"><rect x="6" y="3" width="9" height="16" rx="2" fill="none" stroke="#fff" stroke-width="1.8"/><path d="M10.5 7 l3 0 l-1.6 3 l2.4 0 l-3.3 4.5 l1.2-3.3 l-2 0 Z" fill="#fff"/></svg></span>
               <span class="hx-nm">充电桩</span>
               <span class="hx-bar"><span class="hx-fill" style="width:100%"></span></span>
               <span class="hx-car"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9" fill="none" stroke="#22d3ee" stroke-width="1.6"/><path d="M12 7 V17 M9.5 10.5 h5 M9.5 13.5 h5" stroke="#22d3ee" stroke-width="1.7" stroke-linecap="round"/></svg></span>
-              <span class="hx-amt">2000万</span>
+              <span class="hx-amt"><span class="hx-count" data-to="2000">0</span>万</span>
             </div>
-            <div class="hx-lane lit">
+            <div class="hx-lane lit hx-anim">
               <span class="hx-ico"><svg viewBox="0 0 24 24"><circle cx="6" cy="6" r="2.6" fill="none" stroke="#fff" stroke-width="1.7"/><circle cx="18" cy="6" r="2.6" fill="none" stroke="#fff" stroke-width="1.7"/><circle cx="6" cy="18" r="2.1" fill="none" stroke="#fff" stroke-width="1.7"/><circle cx="18" cy="18" r="2.1" fill="none" stroke="#fff" stroke-width="1.7"/><path d="M8.4 7 L11 11 H13 L15.6 7 M11 11 V14 H13 V11 M8 17 L11 14 M16 17 L13 14" stroke="#fff" stroke-width="1.5" fill="none"/></svg></span>
               <span class="hx-nm">低空经济</span>
               <span class="hx-bar"><span class="hx-fill" style="width:100%"></span></span>
               <span class="hx-car"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9" fill="none" stroke="#22d3ee" stroke-width="1.6"/><path d="M12 7 V17 M9.5 10.5 h5 M9.5 13.5 h5" stroke="#22d3ee" stroke-width="1.7" stroke-linecap="round"/></svg></span>
-              <span class="hx-amt">2000万</span>
+              <span class="hx-amt"><span class="hx-count" data-to="2000">0</span>万</span>
             </div>
-            <div class="hx-lane verified">
+            <div class="hx-lane verified hx-anim">
               <span class="hx-ico"><svg viewBox="0 0 24 24"><rect x="4" y="6" width="16" height="11" rx="1" fill="none" stroke="#fff" stroke-width="1.7"/><path d="M4 10 H20 M4 14 H20 M10 6 V17 M15 6 V17" stroke="#fff" stroke-width="1.3"/><path d="M12 17 V21 M9 21 H15" stroke="#fff" stroke-width="1.6"/></svg></span>
               <span class="hx-nm">光伏</span>
               <span class="hx-bar"><span class="hx-fill" style="width:100%"></span></span>
               <span class="hx-verify">通道走通</span>
             </div>
           </div>
-          <div class="hx-total">孵化赛道累计 <span class="hx-count" data-to="4000">0</span>万 融资</div>
+          <div class="hx-total hx-anim">孵化赛道累计 <span class="hx-count" data-to="4000">0</span>万 融资</div>
         </div>
 
         <!-- 节点2：行业研究 No.1 -->
@@ -678,15 +713,27 @@
           <span class="hx-dot"></span>
           <div class="hx-ntitle"><b>重大项目协同推进</b>及复盘</div>
           <div class="hx-ndesc">对公司历史大项目（五十亿到百亿级）进行专家访谈，按照参与主体和项目流程进行复盘分析，已独立封装宣讲麦当劳、欧菲光和华玻等项目；对公司在推大项目进行协同推进，包括但不限于运用PE、PB、DCF、资产基础法等估值模型进行项目评估，协助完成政府上会报告和企业投资计划书、项目等材料撰写，代表案例常宝新材料（10亿元一期固定资产投资）成功签约。</div>
-          <div class="hx-scaletag">复盘五十亿到百亿级历史大项目</div>
-          <div class="hx-r3">
-            <div class="hx-stamp big">常宝新材料<br><span class="hx-count" data-to="10">0</span>亿 固投签约</div>
-            <div class="hx-corow">
-              <div class="hx-co" style="--c:#E4002B"><span class="hx-cm"><svg viewBox="0 0 24 24"><path d="M5 20 L7 8 Q9 12 12 8 Q15 12 17 8 L19 20" fill="none" stroke="#FFC72C" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>麦当劳</div>
-              <div class="hx-co" style="--c:#00A651"><span class="hx-cm"><svg viewBox="0 0 24 24"><rect x="7" y="5" width="10" height="15" rx="2" fill="none" stroke="#fff" stroke-width="2"/><rect x="9.5" y="2.5" width="5" height="3" rx="1" fill="#fff"/><path d="M11 10 L13 10 L11 14 L13.5 14 L9.5 19 L11 15 L9 15 Z" fill="#fff"/></svg></span>欣旺达</div>
-              <div class="hx-co" style="--c:#1677D2"><span class="hx-cm"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="8" fill="none" stroke="#fff" stroke-width="2"/><circle cx="12" cy="12" r="3.5" fill="#fff"/><path d="M8.5 8.5 L10 7" stroke="#fff" stroke-width="1.6" stroke-linecap="round"/></svg></span>欧菲光</div>
-              <div class="hx-co" style="--c:#F26A21"><span class="hx-cm"><svg viewBox="0 0 24 24"><rect x="4" y="4" width="16" height="16" rx="2" fill="none" stroke="#fff" stroke-width="2"/><path d="M12 4 V20 M4 12 H20" stroke="#fff" stroke-width="2"/></svg></span>广东北玻</div>
-              <div class="hx-co hx-more">···</div>
+          <div class="hx-case">
+            <div class="hx-cs hx-anim">
+              <span class="hx-cs-lab">历史大项目规模</span>
+              <span class="hx-cs-bar"><i></i></span>
+              <span class="hx-cs-rng">50亿 → 100亿</span>
+            </div>
+            <div class="hx-deal hx-anim">
+              <span class="hx-dl-ic"><svg viewBox="0 0 24 24"><path d="M6 3 h8 l4 4 v14 H6 Z" fill="none" stroke="#22d3ee" stroke-width="1.8"/><path d="M14 3 v4 h4" fill="none" stroke="#22d3ee" stroke-width="1.8"/><path d="M9 14 l2.2 2.2 L15.4 12" fill="none" stroke="#22d3ee" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+              <div class="hx-dl-mid">
+                <div class="hx-dl-k">代表案例 · 协同推进成功签约</div>
+                <div class="hx-dl-n">常宝新材料 · 一期固定资产投资</div>
+              </div>
+              <div class="hx-dl-v"><span class="hx-count" data-to="10">0</span><em>亿元</em></div>
+            </div>
+            <div class="hx-rep">
+              <span class="hx-rep-lab">已独立封装宣讲</span>
+              <span class="hx-rep-co" style="--c:#E4002B"><span class="hx-cm"><svg viewBox="0 0 24 24"><path d="M5 20 L7 8 Q9 12 12 8 Q15 12 17 8 L19 20" fill="none" stroke="#FFC72C" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>麦当劳</span>
+              <span class="hx-rep-co" style="--c:#00A651"><span class="hx-cm"><svg viewBox="0 0 24 24"><rect x="7" y="5" width="10" height="15" rx="2" fill="none" stroke="#fff" stroke-width="2"/><rect x="9.5" y="2.5" width="5" height="3" rx="1" fill="#fff"/><path d="M11 10 L13 10 L11 14 L13.5 14 L9.5 19 L11 15 L9 15 Z" fill="#fff"/></svg></span>欣旺达</span>
+              <span class="hx-rep-co" style="--c:#1677D2"><span class="hx-cm"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="8" fill="none" stroke="#fff" stroke-width="2"/><circle cx="12" cy="12" r="3.5" fill="#fff"/><path d="M8.5 8.5 L10 7" stroke="#fff" stroke-width="1.6" stroke-linecap="round"/></svg></span>欧菲光</span>
+              <span class="hx-rep-co" style="--c:#F26A21"><span class="hx-cm"><svg viewBox="0 0 24 24"><rect x="4" y="4" width="16" height="16" rx="2" fill="none" stroke="#fff" stroke-width="2"/><path d="M12 4 V20 M4 12 H20" stroke="#fff" stroke-width="2"/></svg></span>广东北玻</span>
+              <span class="hx-rep-co hx-more">···</span>
             </div>
           </div>
         </div>
@@ -899,7 +946,7 @@
   const countIO = new IntersectionObserver((entries)=>{
     entries.forEach(e=>{
       if(e.isIntersecting){ animateCount(e.target); }
-      else { e.target.textContent = '0' + (e.dataset.suffix || ''); }
+      else { e.target.textContent = '0' + (e.target.dataset.suffix || ''); }
     });
   },{threshold:.5});
   document.querySelectorAll('.count').forEach(el=>{
@@ -935,40 +982,60 @@
   document.addEventListener('touchstart',()=>{},{passive:true});
 </script>
 
-  <!-- 华夏幸福·战略成果轴 交互（滑入重放） -->
+  <!-- 华夏幸福·战略成果轴 交互（元素级滑入重放） -->
   <script>
   (function(){
-    var tg=document.getElementById('hxtg');
-    var arc=document.getElementById('hxarc');
-    var arcNum=document.getElementById('hxArcNum');
     function countUp(el,to,dur){
+      if(el._raf) cancelAnimationFrame(el._raf);
       var t0=null;
-      function step(ts){if(!t0)t0=ts;var p=Math.min((ts-t0)/dur,1);el.textContent=Math.round(to*(1-Math.pow(1-p,3)));if(p<1)requestAnimationFrame(step);}
-      requestAnimationFrame(step);
-    }
-    function runHx(){
-      if(tg) tg.classList.add('on');
-      if(arc){
-        arc.classList.add('on');
-        if(arcNum){ arcNum.textContent='0'; var t0=null,dur=1400,to=75;
-          function stepA(ts){if(!t0)t0=ts;var p=Math.min((ts-t0)/dur,1);arcNum.textContent=Math.round(to*(1-Math.pow(1-p,3)));if(p<1)requestAnimationFrame(stepA);}
-          requestAnimationFrame(stepA);
-        }
+      function step(ts){
+        if(!t0) t0=ts;
+        var p=Math.min((ts-t0)/dur,1);
+        el.textContent=Math.round(to*(1-Math.pow(1-p,3)));
+        if(p<1) el._raf=requestAnimationFrame(step);
       }
-      document.querySelectorAll('.hx-count').forEach(function(el){ el.textContent='0'; countUp(el,parseInt(el.dataset.to,10),1200); });
+      el.textContent='0';
+      el._raf=requestAnimationFrame(step);
     }
-    function resetHx(){
-      if(tg) tg.classList.remove('on');
-      if(arc) arc.classList.remove('on');
-      if(arcNum) arcNum.textContent='0';
-      document.querySelectorAll('.hx-count').forEach(function(el){ el.textContent='0'; });
+    function stopCount(el){ if(el._raf) cancelAnimationFrame(el._raf); el.textContent='0'; }
+    function play(el){
+      el.querySelectorAll('.hx-fill,.hx-cs-bar').forEach(function(f){f.classList.add('run');});
+      if(el.classList.contains('hx-deal')) el.classList.add('run');
+      el.querySelectorAll('.hx-count').forEach(function(c){
+        var to=parseInt(c.dataset.to,10); if(!isNaN(to)) countUp(c,to,1400);
+      });
     }
+    function resetEl(el){
+      el.querySelectorAll('.hx-fill,.hx-cs-bar').forEach(function(f){f.classList.remove('run');});
+      if(el.classList.contains('hx-deal')) el.classList.remove('run');
+      el.querySelectorAll('.hx-count').forEach(stopCount);
+    }
+    var io=new IntersectionObserver(function(es){
+      es.forEach(function(e){ e.isIntersecting ? play(e.target) : resetEl(e.target); });
+    },{threshold:.25});
+    document.querySelectorAll('.hx-anim').forEach(function(el){io.observe(el);});
+
+    /* 0→1 开关：滑入自动拨到「1」，滑出复位；仍可手动点击 */
+    var tg=document.getElementById('hxtg');
     if(tg){
       tg.addEventListener('click',function(){this.classList.toggle('on');});
-      var hxIO=new IntersectionObserver(function(es){es.forEach(function(e){
-        if(e.isIntersecting) runHx(); else resetHx();
-      });},{threshold:.35});
-      hxIO.observe(tg);
+      var tio=new IntersectionObserver(function(es){
+        es.forEach(function(e){ if(e.isIntersecting) tg.classList.add('on'); else tg.classList.remove('on'); });
+      },{threshold:.35});
+      tio.observe(tg);
+    }
+    /* 75% 效率提升弧线 + 数字 */
+    var arc=document.getElementById('hxarc');
+    if(arc){
+      var wrap=arc.closest('.hx-arcwrap')||arc;
+      var an=document.getElementById('hxArcNum');
+      var aio=new IntersectionObserver(function(es){
+        es.forEach(function(e){
+          if(e.isIntersecting){ arc.classList.add('on'); if(an) countUp(an,75,1500); }
+          else { arc.classList.remove('on'); if(an) stopCount(an); }
+        });
+      },{threshold:.3});
+      aio.observe(wrap);
     }
   })();
   </script>
