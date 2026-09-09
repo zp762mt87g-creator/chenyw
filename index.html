@@ -348,6 +348,79 @@
     .top1{background:#f5f5f5!important;border:1px solid #ddd!important}
     .top1 .trank{color:#111!important}
   }
+
+  /* ===== 华夏幸福·战略成果轴（hx- 前缀隔离，不污染全局） ===== */
+  .hx-rail{position:relative;padding-left:34px;margin-top:22px}
+  .hx-rail::before{content:"";position:absolute;left:11px;top:8px;bottom:8px;width:2px;background:linear-gradient(180deg,rgba(34,211,238,.7),rgba(168,85,247,.7));border-radius:2px}
+  .hx-node{position:relative;margin-bottom:26px;padding:16px 18px;border-radius:14px;border:1px solid transparent;transition:transform .3s,border-color .3s,background .3s}
+  .hx-node:hover{transform:translateY(-3px);border-color:var(--panel-border);background:rgba(255,255,255,.02)}
+  .hx-node:last-child{margin-bottom:0}
+  .hx-dot{position:absolute;left:-30px;top:22px;width:13px;height:13px;border-radius:50%;background:var(--grad);box-shadow:0 0 12px rgba(34,211,238,.7)}
+  .hx-dot::after{content:"";position:absolute;inset:-5px;border-radius:50%;border:1px solid rgba(34,211,238,.35);animation:hxpulse 2.4s ease-out infinite}
+  @keyframes hxpulse{0%{transform:scale(.7);opacity:.9}70%{transform:scale(1.6);opacity:0}100%{opacity:0}}
+  .hx-ntitle{font-size:1rem;font-weight:700;color:#fff;margin-bottom:8px}
+  .hx-ntitle b{background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+  .hx-ndesc{font-size:.88rem;color:var(--muted);margin-bottom:14px;line-height:1.75}
+  .hx-tracks{display:flex;flex-direction:column;gap:10px;max-width:480px}
+  .hx-lane{display:flex;align-items:center;gap:10px;padding:8px 12px;border-radius:10px;border:1px solid var(--panel-border);background:rgba(255,255,255,.03);font-size:.82rem;transition:.25s}
+  .hx-lane:hover{border-color:var(--cyan);transform:translateX(3px)}
+  .hx-ico{width:24px;height:24px;flex-shrink:0;display:flex;align-items:center;justify-content:center;border-radius:7px;background:rgba(255,255,255,.06);border:1px solid var(--panel-border)}
+  .hx-ico svg{width:15px;height:15px;display:block}
+  .hx-nm{width:62px;color:var(--muted);flex-shrink:0}
+  .hx-lane.lit .hx-nm{color:var(--text)}
+  .hx-bar{flex:1;height:8px;border-radius:999px;background:rgba(255,255,255,.10);overflow:hidden;position:relative}
+  .hx-fill{position:absolute;top:0;bottom:0;border-radius:999px;background:var(--grad);box-shadow:0 0 10px rgba(34,211,238,.5);transform-origin:left;animation:hxfill 1.2s cubic-bezier(.2,.7,.2,1) forwards}
+  .hx-fill.s1{left:0;width:55%;background:linear-gradient(120deg,#60a5fa,#22d3ee)}
+  .hx-fill.s2{left:55%;width:45%;background:linear-gradient(120deg,#22d3ee,#a855f7);box-shadow:0 0 10px rgba(168,85,247,.5)}
+  @keyframes hxfill{from{transform:scaleX(0)}to{transform:scaleX(1)}}
+  .hx-car{width:22px;height:14px;flex-shrink:0;display:flex;align-items:center}
+  .hx-car svg{width:22px;height:14px;display:block}
+  .hx-amt{font-size:.74rem;color:var(--cyan);font-weight:700;white-space:nowrap}
+  .hx-lane.verified{border-color:rgba(96,165,250,.4);background:rgba(96,165,250,.06)}
+  .hx-lane.verified .hx-nm{color:var(--blue)}
+  .hx-lane.verified .hx-verify{font-size:.72rem;color:var(--blue);font-weight:700;white-space:nowrap}
+  .hx-tag10{display:inline-flex;align-items:center;gap:6px;margin-top:10px;padding:4px 12px;border-radius:999px;border:1px dashed var(--blue);color:var(--blue);font-size:.72rem;font-weight:600}
+  .hx-total{display:inline-flex;align-items:center;gap:8px;margin-top:10px;padding:7px 16px;border-radius:999px;background:var(--grad);color:#06121f;font-weight:800;font-size:.86rem}
+  .hx-top1{display:flex;align-items:center;gap:16px;padding:14px 18px;border-radius:14px;background:rgba(255,255,255,.03);border:1px solid var(--panel-border);max-width:480px;transition:.25s}
+  .hx-top1:hover{border-color:var(--cyan);box-shadow:0 8px 26px rgba(34,211,238,.16)}
+  .hx-badge{width:54px;height:54px;border-radius:14px;background:var(--grad);display:flex;align-items:center;justify-content:center;font-weight:900;font-size:1.5rem;color:#06121f;flex-shrink:0;box-shadow:var(--glow)}
+  .hx-btxt .hx-b1{font-size:1.05rem;font-weight:800;color:#fff}
+  .hx-btxt .hx-b1 span{background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+  .hx-btxt .hx-b2{font-size:.8rem;color:var(--muted)}
+  .hx-cmp{margin-left:auto;width:130px}
+  .hx-you{height:11px;border-radius:999px;background:var(--grad)}
+  .hx-gh{height:6px;border-radius:999px;margin-top:6px;background:rgba(255,255,255,.12);position:relative;overflow:hidden}
+  .hx-gh i{position:absolute;inset:0;border-radius:999px}
+  .hx-gh.b i{width:72%;background:linear-gradient(90deg,#60a5fa,#22d3ee)}
+  .hx-gh.p i{width:46%;background:linear-gradient(90deg,#a855f7,#60a5fa)}
+  .hx-corow{display:flex;flex-wrap:wrap;gap:9px;margin-bottom:12px}
+  .hx-co{display:flex;align-items:center;gap:8px;padding:6px 14px 6px 6px;border-radius:999px;background:rgba(255,255,255,.04);border:1px solid var(--panel-border);font-size:.82rem;transition:.25s;cursor:default}
+  .hx-co:hover{border-color:var(--c,#22d3ee);transform:translateY(-2px)}
+  .hx-co:hover .hx-cm{transform:scale(1.12);box-shadow:0 0 14px var(--c,#22d3ee)}
+  .hx-cm{width:27px;height:27px;border-radius:50%;display:flex;align-items:center;justify-content:center;background:var(--c,#22d3ee);flex-shrink:0;box-shadow:0 0 0 1px rgba(255,255,255,.14),0 2px 8px rgba(0,0,0,.35);transition:transform .25s,box-shadow .25s}
+  .hx-cm svg{width:17px;height:17px;display:block}
+  .hx-co.hx-more{border-style:dashed;color:var(--muted);font-weight:800;letter-spacing:2px;padding:6px 12px;gap:0}
+  .hx-co.hx-more .hx-cm{display:none}
+  .hx-scaletag{display:inline-flex;align-items:center;gap:6px;padding:5px 13px;border-radius:999px;background:rgba(168,85,247,.10);border:1px solid rgba(168,85,247,.35);color:#c9a8f5;font-size:.74rem;font-weight:600;margin-bottom:12px}
+  .hx-stamp{display:inline-flex;align-items:center;gap:8px;padding:8px 16px;border-radius:10px;border:1px dashed var(--cyan);color:var(--cyan);font-weight:700;font-size:.84rem;background:rgba(34,211,238,.06);transition:.25s}
+  .hx-stamp:hover{background:rgba(34,211,238,.14);box-shadow:0 0 18px rgba(34,211,238,.3)}
+  .hx-toggle{display:inline-flex;align-items:center;gap:12px;padding:12px 20px;background:rgba(255,255,255,.03);border:1px solid var(--panel-border);border-radius:12px;cursor:pointer;user-select:none;transition:.25s}
+  .hx-toggle:hover{border-color:var(--cyan)}
+  .hx-tnum{font-weight:800;font-size:1.2rem;color:var(--text);transition:color .3s}
+  .hx-toggle.on .hx-tnum:last-of-type{color:var(--cyan)}
+  .hx-tog{width:50px;height:26px;border-radius:999px;background:rgba(255,255,255,.14);position:relative;flex-shrink:0;transition:background .3s}
+  .hx-tog .hx-knob{position:absolute;top:3px;left:3px;width:20px;height:20px;border-radius:50%;background:#fff;transition:left .3s cubic-bezier(.2,.7,.2,1)}
+  .hx-toggle.on .hx-tog{background:var(--grad);box-shadow:var(--glow)}
+  .hx-toggle.on .hx-tog .hx-knob{left:27px}
+  .hx-ttag{font-size:.82rem;color:var(--muted)}
+  .hx-arcwrap{display:flex;align-items:center;gap:16px}
+  .hx-arcwrap svg{width:124px;height:68px;overflow:visible}
+  .hx-arcbg{fill:none;stroke:rgba(255,255,255,.10);stroke-width:8;stroke-linecap:round}
+  .hx-arcfg{fill:none;stroke:url(#hxarcG);stroke-width:8;stroke-linecap:round;stroke-dasharray:125.6;stroke-dashoffset:125.6;transition:stroke-dashoffset 1.5s cubic-bezier(.2,.7,.2,1)}
+  .hx-arcwrap.on .hx-arcfg{stroke-dashoffset:31.4}
+  .hx-arccap{font-size:.84rem;color:var(--muted)}
+  .hx-arccap b{display:block;color:#fff;font-size:1rem;background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+  @media(max-width:560px){.hx-cmp{display:none}.hx-tracks{max-width:100%}}
 </style>
 </head>
 <body>
@@ -483,113 +556,102 @@
       </div>
       <div class="meta">产业规划 &amp; 政策研究 · 市局产业规划和集群发展处</div>
       <p class="lead-line">职位简述：受深圳大学中国经济特区研究中心/粤港澳大湾区新兴产业发展研究院聘任正式教职，院长为龚晓峰教授（原河北省工信厅厅长、赛迪研究部门创始人、工信部赛迪研究院副院长等）。派驻市工信局产业规划和集群发展处，同时开展课题研究工作和全市产业规划工作</p>
-      <ul>
-        <li>参与《深圳市加快推进新型工业化 高质量建设制造强市<b>"十五五"规划</b>》编制，负责向时任市长汇报材料的修订完善，统筹多部门反馈确保文本规范与信息准确。</li>
-        <li>深度参与深圳<b>"20+8"产业集群 3.0 版本</b>战略规划与统计，对接发改、工信、科创等产业局开展集群与企业纳统调研，并编制面向金融业的政策解读授课材料。</li>
-        <li>独立主笔编制定期工作报告，跟进全市产业集群培育情况、分析部委与各主要城市动态，向常务副市长等市、区、局主要领导报送决策参考。</li>
-        <li>参与国家先进集群建设、国家新型工业化示范区建设等规划调研编制，定期赴企业座谈调研前沿技术动态。</li>
-        <li>参与国家、省、市各级课题及优必选等行业龙头调研，编写招商引资材料供院长面向陕西省委省政府授课，获省领导高度肯定。</li>
-      </ul>
-      <div class="inline-metrics two-col">
-        <div class="mini sm"><div class="mv">十五五</div><div class="ml">市级专项规划编制</div></div>
-        <div class="mini sm"><div class="mv">20+8</div><div class="ml">产业集群战略 3.0</div></div>
-        <div class="mini sm"><div class="mv">企业调研</div><div class="ml">优必选、华为等行业龙头</div></div>
-        <div class="mini sm"><div class="mv">纵向课题</div><div class="ml">国家 · 省 · 市级课题</div></div>
-      </div>
-    </div>
-
-    <div class="item reveal">
-      <div class="head">
-        <div class="org">主导 <span class="co">不良资产处置</span>项目</div>
-        <div class="date">2025.08 — 2026.03</div>
-      </div>
-      <div class="meta">项目主导 · 债务重组与资产置换</div>
-      <ul>
-        <li>主导家庭不良资产处置，对接债务人与债权人进行<b>多轮谈判</b>，设计资产置换与债务展期方案。</li>
-        <li>标的债权本金综合回收率达 <b>75%+</b>，实现资产价值的有效保全。</li>
-      </ul>
-      <div class="rings">
-        <div class="ring-fig big">
-          <svg class="donut" viewBox="0 0 120 120">
-            <defs><linearGradient id="gM" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#22d3ee"/><stop offset="1" stop-color="#a855f7"/></linearGradient></defs>
-            <circle class="track" cx="60" cy="60" r="51"/>
-            <circle class="prog" cx="60" cy="60" r="51" stroke="url(#gM)" style="--p:75;--o:80"/>
-          </svg>
-          <div class="ring-center"><span class="count" data-target="75" data-suffix="%">0%</span></div>
-          <div class="ring-cap">债权综合回收率</div>
-        </div>
-        <div class="ring-side">
-          <div class="ring-fig">
-            <svg class="donut" viewBox="0 0 120 120">
-              <defs><linearGradient id="gF" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#22d3ee"/><stop offset="1" stop-color="#a855f7"/></linearGradient></defs>
-              <circle class="track" cx="60" cy="60" r="51"/>
-              <circle class="prog" cx="60" cy="60" r="51" stroke="url(#gF)" style="--p:65;--o:112"/>
-            </svg>
-            <div class="ring-center"><span class="count" data-target="65" data-suffix="%">0%</span></div>
-            <div class="ring-cap">各项房产</div>
-          </div>
-          <div class="ring-fig">
-            <svg class="donut" viewBox="0 0 120 120">
-              <defs><linearGradient id="gC" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#22d3ee"/><stop offset="1" stop-color="#a855f7"/></linearGradient></defs>
-              <circle class="track" cx="60" cy="60" r="51"/>
-              <circle class="prog" cx="60" cy="60" r="51" stroke="url(#gC)" style="--p:10;--o:288"/>
-            </svg>
-            <div class="ring-center"><span class="count" data-target="10" data-suffix="%">0%</span></div>
-            <div class="ring-cap">现金</div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="item reveal">
-      <div class="head">
-        <div class="org"><span class="co">华夏幸福</span>基业股份有限公司（600340）</div>
-        <div class="date">2023.12 — 2025.08</div>
-      </div>
-      <div class="meta">战略管理部 · 战略管理</div>
-      <p class="lead-line">在职总结：+1领导为副总裁（两任均为前麦肯锡全球合伙人），在领导培养下形成系统的战略研究方法论和较强自驱力、抗压力、快速学习能力</p>
-      <ul>
-        <li><b>新业务孵化及商业模式研究：</b>迭代升级招商引资业务获政府高度肯定；孵化充电桩、光伏、低空经济三大赛道，低空（零界科技）与充电桩（三好充电）公司成立并累计获 <b>4000 万元融资</b>。
-          <div class="inline-metrics two-col">
-            <div class="mini"><div class="mv count" data-target="2000" data-suffix="万">2000万</div><div class="ml">低空经济（零界科技）</div></div>
-            <div class="mini"><div class="mv count" data-target="2000" data-suffix="万">2000万</div><div class="ml">充电桩（三好充电）</div></div>
-          </div>
-        </li>
-        <li><b>行业研究及投研分析：</b>独立输出低空经济白皮书、市值管理计划、三中全会解读、AI 与充电桩出海等专题报告，公众号阅读量全司最高。
-          <div class="top1">
-            <span class="trophy">🏆</span>
-            <div class="ttext">
-              <div class="trank">全司 TOP 1</div>
-              <div class="tcap">公众号阅读量 · 全司最高</div>
+            <div class="hx-rail">
+        <!-- 节点1：新业务孵化 -->
+        <div class="hx-node">
+          <span class="hx-dot"></span>
+          <div class="hx-ntitle"><b>新业务孵化</b>及商业模式研究</div>
+          <div class="hx-ndesc">迭代升级招商引资业务获政府高度肯定；孵化充电桩、光伏、低空经济三大赛道，低空（零界科技）与充电桩（三好充电）公司成立并累计获 4000 万元融资。<br>（光伏赛道于参与前已完成融资并跑通模式，从商业模式角度总结 10 条资源兑换通道）</div>
+          <div class="hx-tracks">
+            <div class="hx-lane lit">
+              <span class="hx-ico"><svg viewBox="0 0 24 24"><rect x="6" y="3" width="9" height="16" rx="2" fill="none" stroke="#fff" stroke-width="1.8"/><path d="M10.5 7 l3 0 l-1.6 3 l2.4 0 l-3.3 4.5 l1.2-3.3 l-2 0 Z" fill="#fff"/></svg></span>
+              <span class="hx-nm">充电桩</span>
+              <span class="hx-bar"><span class="hx-fill" style="width:100%"></span></span>
+              <span class="hx-car"><svg viewBox="0 0 24 24"><path d="M3 13 v3 a1 1 0 0 0 1 1 h1 l1.5-4 h7 l2 3 h1.5 a1 1 0 0 0 1-1 v-3 l-2.5-4 H7 Z" fill="none" stroke="#22d3ee" stroke-width="1.5"/><circle cx="7.5" cy="17" r="1.5" fill="#22d3ee"/><circle cx="16.5" cy="17" r="1.5" fill="#22d3ee"/></svg></span>
+              <span class="hx-amt">2000万</span>
+            </div>
+            <div class="hx-lane lit">
+              <span class="hx-ico"><svg viewBox="0 0 24 24"><circle cx="6" cy="6" r="2.6" fill="none" stroke="#fff" stroke-width="1.7"/><circle cx="18" cy="6" r="2.6" fill="none" stroke="#fff" stroke-width="1.7"/><circle cx="6" cy="18" r="2.1" fill="none" stroke="#fff" stroke-width="1.7"/><circle cx="18" cy="18" r="2.1" fill="none" stroke="#fff" stroke-width="1.7"/><path d="M8.4 7 L11 11 H13 L15.6 7 M11 11 V14 H13 V11 M8 17 L11 14 M16 17 L13 14" stroke="#fff" stroke-width="1.5" fill="none"/></svg></span>
+              <span class="hx-nm">低空经济</span>
+              <span class="hx-bar"><span class="hx-fill" style="width:100%"></span></span>
+              <span class="hx-car"><svg viewBox="0 0 24 24"><path d="M3 13 v3 a1 1 0 0 0 1 1 h1 l1.5-4 h7 l2 3 h1.5 a1 1 0 0 0 1-1 v-3 l-2.5-4 H7 Z" fill="none" stroke="#22d3ee" stroke-width="1.5"/><circle cx="7.5" cy="17" r="1.5" fill="#22d3ee"/><circle cx="16.5" cy="17" r="1.5" fill="#22d3ee"/></svg></span>
+              <span class="hx-amt">2000万</span>
+            </div>
+            <div class="hx-lane verified">
+              <span class="hx-ico"><svg viewBox="0 0 24 24"><rect x="4" y="6" width="16" height="11" rx="1" fill="none" stroke="#fff" stroke-width="1.7"/><path d="M4 10 H20 M4 14 H20 M10 6 V17 M15 6 V17" stroke="#fff" stroke-width="1.3"/><path d="M12 17 V21 M9 21 H15" stroke="#fff" stroke-width="1.6"/></svg></span>
+              <span class="hx-nm">光伏</span>
+              <span class="hx-bar"><span class="hx-fill s1"></span><span class="hx-fill s2"></span></span>
+              <span class="hx-verify">通道走通</span>
             </div>
           </div>
-        </li>
-        <li><b>重大项目协同：</b>复盘五十亿至百亿级历史项目；运用 PE/PB/DCF/资产基础法估值，协助完成政府上会报告，常宝新材料（10 亿元固投）成功签约。
-          <div class="proj-footer">
-            <div class="mini"><div class="mv count" data-target="10" data-suffix="亿">10亿</div><div class="ml">常宝新材料固投签约</div></div>
-            <div class="logo-row">
-              <div class="logo brand-mcd"><span class="mono">M</span><span class="nm">麦当劳</span></div>
-              <div class="logo brand-ofilm"><span class="mono">欧</span><span class="nm">欧菲光</span></div>
-              <div class="logo brand-cb"><span class="mono">常</span><span class="nm">常宝新材料</span></div>
-              <span class="logo-etc">…</span>
+          <div class="hx-tag10">总结 10 条资源兑换通道（商业模式角度）</div>
+          <div class="hx-total">孵化赛道累计 <span class="hx-count" data-to="4000">0</span>万 融资</div>
+        </div>
+
+        <!-- 节点2：行业研究 No.1 -->
+        <div class="hx-node">
+          <span class="hx-dot"></span>
+          <div class="hx-ntitle"><b>行业研究</b>及投研分析</div>
+          <div class="hx-ndesc">独立输出低空经济白皮书、市值管理计划、三中全会解读、AI 与充电桩出海等专题报告，公众号阅读量全司最高。</div>
+          <div class="hx-top1">
+            <div class="hx-badge">①</div>
+            <div class="hx-btxt">
+              <div class="hx-b1">全司 <span>No.1</span></div>
+              <div class="hx-b2">公众号阅读量 · 全司最高</div>
+            </div>
+            <div class="hx-cmp">
+              <div class="hx-you"></div>
+              <div class="hx-gh b"><i></i></div>
+              <div class="hx-gh p"><i></i></div>
             </div>
           </div>
-        </li>
-        <li><b>管理赋能：</b>访谈全司中后台与一线，输出投资选址研究、业务 SOP 与多渠道招商策略，实现业务指导标准化从 0 到 1 突破。
-          <div class="breakthrough toggle-wrap">
-            <span class="label">业务指导标准化</span>
-            <span class="tnum">0</span>
-            <div class="toggle on"><span class="knob"></span></div>
-            <span class="tnum">1</span>
-            <span class="toggle-tag">从 0 到 1 突破</span>
+        </div>
+
+        <!-- 节点3：重大项目协同 -->
+        <div class="hx-node">
+          <span class="hx-dot"></span>
+          <div class="hx-ntitle"><b>重大项目协同</b></div>
+          <div class="hx-ndesc">复盘五十亿至百亿级历史项目；运用 PE/PB/DCF/资产基础法估值，协助完成政府上会报告，常宝新材料（10 亿元固投）成功签约。</div>
+          <div class="hx-scaletag">复盘五十亿至百亿级历史项目</div>
+          <div class="hx-corow">
+            <div class="hx-co" style="--c:#E4002B"><span class="hx-cm"><svg viewBox="0 0 24 24"><path d="M5 20 L7 8 Q9 12 12 8 Q15 12 17 8 L19 20" fill="none" stroke="#FFC72C" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>麦当劳</div>
+            <div class="hx-co" style="--c:#00A651"><span class="hx-cm"><svg viewBox="0 0 24 24"><rect x="7" y="5" width="10" height="15" rx="2" fill="none" stroke="#fff" stroke-width="2"/><rect x="9.5" y="2.5" width="5" height="3" rx="1" fill="#fff"/><path d="M11 10 L13 10 L11 14 L13.5 14 L9.5 19 L11 15 L9 15 Z" fill="#fff"/></svg></span>欣旺达</div>
+            <div class="hx-co" style="--c:#1677D2"><span class="hx-cm"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="8" fill="none" stroke="#fff" stroke-width="2"/><circle cx="12" cy="12" r="3.5" fill="#fff"/><path d="M8.5 8.5 L10 7" stroke="#fff" stroke-width="1.6" stroke-linecap="round"/></svg></span>欧菲光</div>
+            <div class="hx-co" style="--c:#F26A21"><span class="hx-cm"><svg viewBox="0 0 24 24"><rect x="4" y="4" width="16" height="16" rx="2" fill="none" stroke="#fff" stroke-width="2"/><path d="M12 4 V20 M4 12 H20" stroke="#fff" stroke-width="2"/></svg></span>广东北玻</div>
+            <div class="hx-co hx-more">···</div>
           </div>
-        </li>
-        <li><b>战略复盘及规划：</b>完成业绩与能力建设复盘及规划文件撰写，优化复盘 SOP 提升效率 <b>75%</b>。
-          <div class="inline-metrics">
-            <div class="mini grow"><div class="mv"><span class="arrow">↗</span><span class="count" data-target="75" data-suffix="%">75%</span></div><div class="ml">复盘 SOP 效率提升</div></div>
+          <div class="hx-stamp">常宝新材料 · <span class="hx-count" data-to="10">0</span>亿 固投签约</div>
+        </div>
+
+        <!-- 节点4：管理赋能 0→1 -->
+        <div class="hx-node">
+          <span class="hx-dot"></span>
+          <div class="hx-ntitle"><b>管理赋能</b></div>
+          <div class="hx-ndesc">访谈全司中后台与一线，输出投资选址研究、业务 SOP 与多渠道招商策略，实现业务指导标准化从 0 到 1 突破。</div>
+          <div class="hx-toggle on" id="hxtg">
+            <span class="hx-tnum">0</span>
+            <span class="hx-tog"><span class="hx-knob"></span></span>
+            <span class="hx-tnum">1</span>
+            <span class="hx-ttag">业务指导标准化 · 从 0 到 1 突破</span>
           </div>
-        </li>
-      </ul>
+        </div>
+
+        <!-- 节点5：战略复盘 75% -->
+        <div class="hx-node">
+          <span class="hx-dot"></span>
+          <div class="hx-ntitle"><b>战略复盘</b>及规划</div>
+          <div class="hx-ndesc">完成业绩与能力建设复盘及规划文件撰写，优化复盘 SOP 提升效率 75%。</div>
+          <div class="hx-arcwrap" id="hxarc">
+            <svg viewBox="0 0 100 56">
+              <defs><linearGradient id="hxarcG" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#22d3ee"/><stop offset="1" stop-color="#a855f7"/></linearGradient></defs>
+              <path class="hx-arcbg" d="M10 50 A40 40 0 0 1 90 50"/>
+              <path class="hx-arcfg" d="M10 50 A40 40 0 0 1 90 50"/>
+              <text x="50" y="46" text-anchor="middle" fill="#fff" font-size="17" font-weight="800"><tspan id="hxArcNum">0</tspan>%</text>
+            </svg>
+            <div class="hx-arccap"><b>复盘 SOP 效率提升</b>优化流程，提效显著</div>
+          </div>
+        </div>
+      </div>
       <div class="honor-row">
         <div class="honor"><span class="star">★</span> 年度绩效全部门最高</div>
         <div class="honor"><span class="star">★</span> 校招生述职前三 · 3/70</div>
@@ -801,5 +863,30 @@
   // iOS Safari / 微信：默认不触发 :active，加一个空 touchstart 监听以激活触摸反馈
   document.addEventListener('touchstart',()=>{},{passive:true});
 </script>
+
+  <!-- 华夏幸福·战略成果轴 交互 -->
+  <script>
+  (function(){
+    var tg=document.getElementById('hxtg');
+    if(tg){tg.addEventListener('click',function(){this.classList.toggle('on');});}
+    function countUp(el,to,dur){
+      var t0=null;
+      function step(ts){if(!t0)t0=ts;var p=Math.min((ts-t0)/dur,1);el.textContent=Math.round(to*(1-Math.pow(1-p,3)));if(p<1)requestAnimationFrame(step);}
+      requestAnimationFrame(step);
+    }
+    window.addEventListener('load',function(){
+      var arc=document.getElementById('hxarc');
+      if(arc){
+        setTimeout(function(){arc.classList.add('on');},200);
+        var an=document.getElementById('hxArcNum'),t0=null,dur=1400,to=75;
+        function stepA(ts){if(!t0)t0=ts;var p=Math.min((ts-t0)/dur,1);an.textContent=Math.round(to*(1-Math.pow(1-p,3)));if(p<1)requestAnimationFrame(stepA);}
+        requestAnimationFrame(stepA);
+      }
+      document.querySelectorAll('.hx-count').forEach(function(el){
+        countUp(el,parseInt(el.dataset.to,10),1200);
+      });
+    });
+  })();
+  </script>
 </body>
 </html>
