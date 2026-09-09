@@ -313,11 +313,11 @@
     .inline-metrics.two-col{grid-template-columns:1fr}
     .honor-row{grid-template-columns:1fr}
   .mini-row{grid-template-columns:repeat(auto-fit,minmax(140px,1fr))}
-  nav{flex-wrap:wrap;justify-content:center;row-gap:6px;padding:8px 12px}
-  nav.open{border-radius:24px;padding:12px 14px 14px;row-gap:8px}
+  nav{flex-wrap:wrap;justify-content:center;row-gap:6px;padding:8px 12px;max-width:calc(100vw - 20px)}
+  nav.open{border-radius:22px;padding:10px 10px 12px;row-gap:8px;width:calc(100vw - 20px)}
   nav .brand{order:1}
-  nav .nav-toggle{display:inline-block;order:2;margin-left:auto;color:var(--muted);font-size:1.2rem}
-  nav a:not(.brand){display:none;order:3;width:calc(50% - 4px);box-sizing:border-box;text-align:center;padding:12px 6px;font-size:.88rem;border-radius:12px;background:rgba(255,255,255,.045)}
+  nav .nav-toggle{display:inline-block;order:4;margin-left:0;color:var(--muted);font-size:1.2rem}
+  nav a:not(.brand){display:none;order:3;flex:1 1 0;width:auto;min-width:0;box-sizing:border-box;text-align:center;padding:11px 2px;font-size:.76rem;white-space:nowrap;border-radius:10px;background:rgba(255,255,255,.06)}
   nav.open a:not(.brand){display:block}
     section.wrap{padding:28px 24px}
     section.contact{padding-bottom:150px}
