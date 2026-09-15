@@ -295,8 +295,6 @@
   .portfolio .pf-ic{font-size:1.9rem;line-height:1;filter:drop-shadow(0 0 10px rgba(34,211,238,.4))}
   .portfolio .pf-txt{flex:1;text-align:left;min-width:0}
   .portfolio .pf-name{font-size:1.02rem;font-weight:700}
-  .portfolio .pf-cap{font-size:.76rem;color:var(--muted);margin-top:3px}
-  .portfolio .pf-tag{display:inline-block;margin-left:8px;padding:2px 8px;border-radius:999px;font-size:.66rem;color:var(--cyan);border:1px solid var(--panel-border);background:rgba(34,211,238,.08);vertical-align:middle}
   .pf-list{display:flex;flex-direction:column;gap:10px;margin-top:15px}
   .pf-card{display:flex;align-items:center;gap:11px;padding:12px 14px;border-radius:12px;background:rgba(255,255,255,.03);border:1px solid var(--panel-border);text-decoration:none;color:inherit;transition:.25s}
   .pf-card:hover,.pf-card:active{border-color:var(--cyan);background:rgba(34,211,238,.07);transform:translateY(-2px);box-shadow:0 6px 20px rgba(34,211,238,.12)}
@@ -304,6 +302,19 @@
   .pf-ctitle{flex:1;min-width:0;font-size:.88rem;font-weight:600;color:var(--text);line-height:1.45}
   .pf-dl{flex-shrink:0;font-size:.78rem;color:var(--cyan);white-space:nowrap}
   @media(max-width:560px){.pf-card{flex-wrap:wrap;gap:8px}.pf-ctitle{flex:1 1 100%;order:3;font-size:.85rem}.pf-ctitle .pf-l2{display:block}}
+
+  /* 回到顶部按钮：右下角固定、滚动后浮现、留白防误触、两端自适应 */
+  .to-top{position:fixed;right:22px;bottom:22px;z-index:90;width:46px;height:46px;border-radius:50%;
+    display:flex;align-items:center;justify-content:center;cursor:pointer;font-size:1.25rem;color:var(--cyan);
+    background:rgba(10,18,31,.82);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);
+    border:1px solid rgba(34,211,238,.4);box-shadow:0 6px 18px rgba(0,0,0,.35);
+    opacity:0;visibility:hidden;transform:translateY(14px);pointer-events:none;
+    transition:opacity .3s ease,transform .3s ease,visibility .3s ease,background .2s,box-shadow .2s}
+  .to-top.show{opacity:1;visibility:visible;transform:translateY(0);pointer-events:auto}
+  .to-top:hover{background:rgba(34,211,238,.16);box-shadow:0 8px 24px rgba(34,211,238,.25)}
+  .to-top:active{transform:scale(.93)}
+  .to-top svg{display:block;width:1.12em;height:1.12em}
+  @media(max-width:560px){.to-top{right:16px;bottom:calc(16px + env(safe-area-inset-bottom,0px));width:48px;height:48px;font-size:1.3rem}}
   .contact .links a{display:inline-flex;align-items:center;gap:10px;padding:16px 30px;border-radius:15px;border:1px solid rgba(34,211,238,.3);background:linear-gradient(180deg,rgba(34,211,238,.1),rgba(255,255,255,.035));font-size:1.04rem;font-weight:600;letter-spacing:.4px;box-shadow:0 8px 24px rgba(0,0,0,.22);transition:.3s}
   .contact .links a .ic{font-size:1.25rem;line-height:1}
   .contact .links a:hover,.contact .links a:active{border-color:var(--cyan);background:linear-gradient(180deg,rgba(34,211,238,.2),rgba(34,211,238,.06));color:var(--cyan);transform:translateY(-3px);box-shadow:0 12px 30px rgba(34,211,238,.22)}
@@ -858,15 +869,14 @@
 <!-- CONTACT -->
 <section id="contact" class="wrap contact">
   <div class="eyebrow" style="justify-content:center">Contact</div>
-  <h2 class="title">保持<span class="accent">联系</span></h2>
-  <div class="big">期待与你合作</div>
+  <h2 class="title">欢迎<span class="accent">联系</span></h2>
+  <div class="big">期待与你进一步沟通</div>
   <!-- 个人作品集：3 篇代表作，PDF 存于仓库根目录（同源相对路径，download 属性可指定中文文件名） -->
   <div class="portfolio reveal" id="portfolio">
     <div class="pf-head">
       <div class="pf-ic">📂</div>
       <div class="pf-txt">
-        <div class="pf-name">个人作品集<span class="pf-tag">3 篇代表作</span></div>
-        <div class="pf-cap">行业研究 · 宏观经济 · 政策解读，点击下载预览版（完整版欢迎联系索取）</div>
+        <div class="pf-name">个人作品集</div>
       </div>
     </div>
     <div class="pf-list">
@@ -897,6 +907,8 @@
 <footer class="wrap">
   © <span id="year"></span> 陈源威 · 个人简历 · Designed with modern tech style
 </footer>
+
+<button id="toTop" class="to-top" aria-label="回到顶部" title="回到顶部"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 4h14"/><path d="M12 20V8"/><path d="M6.5 13.5 12 8l5.5 5.5"/></svg></button>
 
 <script>
   // 当前年份
@@ -1012,6 +1024,16 @@
 
   // iOS Safari / 微信：默认不触发 :active，加一个空 touchstart 监听以激活触摸反馈
   document.addEventListener('touchstart',()=>{},{passive:true});
+
+  // 回到顶部：滚动超过约一屏后浮现，点击平滑回顶（初始隐藏且不响应点击，防误触）
+  const toTop = document.getElementById('toTop');
+  if(toTop){
+    const toggleTop = () => toTop.classList.toggle('show', window.scrollY > Math.max(400, window.innerHeight * 0.6));
+    window.addEventListener('scroll', toggleTop, {passive:true});
+    window.addEventListener('resize', toggleTop);
+    toTop.addEventListener('click', () => window.scrollTo({top:0, behavior:'smooth'}));
+    toggleTop();
+  }
 </script>
 
   <!-- 华夏幸福·战略成果轴 交互（元素级滑入重放） -->
